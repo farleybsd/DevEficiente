@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Interface;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
+﻿
 
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Context
 {

@@ -1,9 +1,3 @@
-using Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
-using Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting;
-using MediatR;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

@@ -1,9 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
-using Com.DevEficiente.CasaDoCodigo.Domain.Interface.Repositorio;
-using MediatR;
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
     public class AutorSaveCommandHandler : IRequestHandler<AutorSaveCommand,AutorResponse>
     {

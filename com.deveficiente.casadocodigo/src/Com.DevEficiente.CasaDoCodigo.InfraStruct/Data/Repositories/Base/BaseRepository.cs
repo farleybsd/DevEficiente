@@ -1,8 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Domain.Interface.Repositorio;
-using Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Interface;
-using MongoDB.Bson;
-using MongoDB.Driver;
-
+﻿
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories.Base
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class

@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
-using Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor;
-using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 {
