@@ -14,8 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Add MediatR with the assembly containing your request handlers
 builder.Services.AddMediatR(typeof(Program).Assembly);
-builder.Services.AddScoped<IRequestHandler<AutorSaveCommand, AutorResponse>, AutorSaveCommandHandler>();
 NativeInjectorBootStrapper.CasaDoCodigoRegisterMongoDBServices(builder.Services);
+NativeInjectorBootStrapper.CasaDoCodigoRegisterMediatR(builder.Services);
 
 var app = builder.Build();
 

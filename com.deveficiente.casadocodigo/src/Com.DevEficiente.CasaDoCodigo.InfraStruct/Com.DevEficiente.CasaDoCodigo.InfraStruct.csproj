@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Com.DevEficiente.CasaDoCodigo.Aplication\Com.DevEficiente.CasaDoCodigo.Aplication.csproj" />
     <ProjectReference Include="..\Com.DevEficiente.CasaDoCodigo.Domain\Com.DevEficiente.CasaDoCodigo.Domain.csproj" />
   </ItemGroup>
 
