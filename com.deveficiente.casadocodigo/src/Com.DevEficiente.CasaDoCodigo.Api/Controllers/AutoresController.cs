@@ -28,7 +28,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             var autorSaveCommand = autorRequest.toCommand(autorRequest);
             var command = await _mediator.Send(autorSaveCommand);
-            return Ok(new AutorResponse());
+            return Ok(command);
         }
     }
 }

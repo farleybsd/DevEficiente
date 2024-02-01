@@ -19,7 +19,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 
         public AutorSaveCommand toCommand(AutorRequest autor)
         {
-            return new AutorSaveCommand(autor.Nome,new Email(autor.Email),autor.Descricao);
+            return new AutorSaveCommand(autor.Nome,autor.Email,autor.Descricao);
         }
     }
 }

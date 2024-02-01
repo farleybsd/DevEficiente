@@ -1,8 +1,8 @@
 using Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
+using Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting;
 using MediatR;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 // Add MediatR with the assembly containing your request handlers
 builder.Services.AddMediatR(typeof(Program).Assembly);
 builder.Services.AddScoped<IRequestHandler<AutorSaveCommand, AutorResponse>, AutorSaveCommandHandler>();
-
+NativeInjectorBootStrapper.CasaDoCodigoRegisterMongoDBServices(builder.Services);
 
 var app = builder.Build();
 

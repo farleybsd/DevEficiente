@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Com.DevEficiente.CasaDoCodigo.Aplication\Com.DevEficiente.CasaDoCodigo.Aplication.csproj" />
+    <ProjectReference Include="..\Com.DevEficiente.CasaDoCodigo.InfraStruct\Com.DevEficiente.CasaDoCodigo.InfraStruct.csproj" />
   </ItemGroup>
 
 </Project>
