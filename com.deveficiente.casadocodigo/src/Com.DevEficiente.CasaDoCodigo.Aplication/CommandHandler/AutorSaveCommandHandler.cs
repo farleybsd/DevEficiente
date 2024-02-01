@@ -26,7 +26,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
             {
                 Nome = request.Nome,
                 Email = request.Email,
-                Descricao = request.Descricao
+                Descricao = request.Descricao,
+                Instante = AutorSave.Instante
             };
         }
     }
