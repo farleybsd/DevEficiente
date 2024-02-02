@@ -26,3 +26,4 @@ services:
     environment:
         MongoSettings__Connection: mongodb://root:MongoDB2019!@mongo:27017
         MongoSettings__DatabaseName: CasaDoCodigo
+        ASPNETCORE_ENVIRONMENT: Development
