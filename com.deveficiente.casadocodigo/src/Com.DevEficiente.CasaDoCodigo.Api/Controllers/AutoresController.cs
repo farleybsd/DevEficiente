@@ -103,5 +103,18 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
 
         }
+
+        [HttpPut("editar-autor")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AutorEditarRequest))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<AutorResponse>> EditarAutor(AutorEditarRequest autorEditarRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            var commandEditar = await _mediator.Send(autorEditarRequest.RequestToCommand(autorEditarRequest));
+            return Ok(commandEditar);
+        }
     }
 }
