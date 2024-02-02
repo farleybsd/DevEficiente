@@ -25,13 +25,22 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Criar([FromBody] AutorRequest autorRequest)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest();
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+                var autorSaveCommand = autorRequest.RequestToCommand(autorRequest);
+                var command = await _mediator.Send(autorSaveCommand);
+                return Ok(command);
             }
-            var autorSaveCommand = autorRequest.RequestToCommand(autorRequest);
-            var command = await _mediator.Send(autorSaveCommand);
-            return Ok(command);
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Erro inesperado ao Salvar o Autor - {ex.Message}"); ;
+            }
+            
         }
 
         [HttpGet("/buscar-autores")]
@@ -90,7 +99,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             catch (Exception ex)
             {
 
-                throw new Exception($"Erro inesperado ao Buscar os Autroes - {ex.Message}"); ;
+                throw new Exception($"Erro inesperado ao Buscar os Autores - {ex.Message}"); ;
             }
 
         }
