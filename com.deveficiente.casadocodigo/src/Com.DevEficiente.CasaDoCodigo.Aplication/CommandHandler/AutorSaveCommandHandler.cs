@@ -1,9 +1,10 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
-    public class AutorSaveCommandHandler : IRequestHandler<AutorSaveCommand,AutorResponse>
+    public class AutorSaveCommandHandler : IRequestHandler<AutorSaveCommand, AutorResponse>
     {
         private readonly IMediator _mediator;
         private readonly IAutorRepository _autorRepository;
+
         public AutorSaveCommandHandler(IMediator mediator,
                                        IAutorRepository autorRepository)
         {
@@ -14,7 +15,7 @@
         public async Task<AutorResponse> Handle(AutorSaveCommand request, CancellationToken cancellationToken)
         {
             var AutorSave = request.CommandToEntity(request);
-            
+
             await _autorRepository.Add(AutorSave);
 
             return new AutorResponse()

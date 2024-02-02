@@ -4,6 +4,7 @@
     {
         [Required(ErrorMessage = "Id é obrigatório.")]
         public string Id { get; set; }
+
         [Required(ErrorMessage = "O Nome é obrigatório.")]
         public string Nome { get; set; }
 
@@ -17,7 +18,7 @@
 
         public AutorEditarCommand RequestToCommand(AutorEditarRequest autor)
         {
-            return new AutorEditarCommand(autor.Nome, autor.Email, autor.Descricao,autor.Id);
+            return new AutorEditarCommand(autor.Nome, autor.Email, autor.Descricao, autor.Id);
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 {
     public class AutorRequest
     {
@@ -17,7 +15,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 
         public AutorSaveCommand RequestToCommand(AutorRequest autor)
         {
-            return new AutorSaveCommand(autor.Nome,autor.Email,autor.Descricao);
+            return new AutorSaveCommand(autor.Nome, autor.Email, autor.Descricao);
         }
     }
 }

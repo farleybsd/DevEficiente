@@ -1,6 +1,4 @@
-﻿
-
-namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Context
+﻿namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Context
 {
     public class MongoContext : IMongoContext
     {

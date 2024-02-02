@@ -15,7 +15,7 @@
 
         public Autor CommandToEntity(AutorSaveCommand command)
         {
-            return new Autor(command.Nome,new Email(command.Email),command.Descricao);
+            return new Autor(command.Nome, new Email(command.Email), command.Descricao);
         }
     }
 }

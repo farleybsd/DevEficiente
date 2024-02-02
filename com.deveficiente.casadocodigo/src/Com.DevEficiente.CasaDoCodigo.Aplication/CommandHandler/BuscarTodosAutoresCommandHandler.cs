@@ -16,7 +16,7 @@
 
             foreach (var item in listAutores)
             {
-                listAutorResponse.Add(new AutorResponse() {Nome= item.Nome,Email = item.Email._email,Descricao=item.Descricao } );
+                listAutorResponse.Add(new AutorResponse() { Nome = item.Nome, Email = item.Email._email, Descricao = item.Descricao });
             }
             return listAutorResponse;
         }

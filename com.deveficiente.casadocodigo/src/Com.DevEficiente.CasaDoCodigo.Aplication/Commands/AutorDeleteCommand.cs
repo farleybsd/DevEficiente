@@ -1,6 +1,6 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
 {
-    public class AutorDeleteCommand :IRequest<string>
+    public class AutorDeleteCommand : IRequest<string>
     {
         public AutorDeleteCommand(string id)
         {

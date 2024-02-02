@@ -1,7 +1,11 @@
 ﻿global using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
+global using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
 global using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
+global using Com.DevEficiente.CasaDoCodigo.Aplication.Result;
 global using Com.DevEficiente.CasaDoCodigo.Domain.Entidades;
 global using Com.DevEficiente.CasaDoCodigo.Domain.Interface.Repositorio;
 global using Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor;
 global using MediatR;
+global using MongoDB.Bson;
+global using MongoDB.Bson.Serialization.Attributes;
 global using System.ComponentModel.DataAnnotations;

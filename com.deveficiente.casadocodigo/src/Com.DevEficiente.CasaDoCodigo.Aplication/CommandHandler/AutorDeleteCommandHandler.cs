@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
     public class AutorDeleteCommandHandler : IRequestHandler<AutorDeleteCommand, string>
     {

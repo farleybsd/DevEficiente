@@ -1,22 +1,13 @@
-using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
-using Com.DevEficiente.CasaDoCodigo.Domain.Entidades;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
 namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class AutoresController : ControllerBase
     {
-        private readonly ILogger<AutoresController> _logger;
         private readonly IMediator _mediator;
-        public AutoresController(ILogger<AutoresController> logger, IMediator mediator)
+
+        public AutoresController(IMediator mediator)
         {
-            _logger = logger;
             _mediator = mediator;
         }
 
@@ -37,10 +28,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"Erro inesperado ao Salvar o Autor - {ex.Message}"); ;
             }
-
         }
 
         [HttpGet("/buscar-autores")]
@@ -58,10 +47,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             catch (AutorByIdQueryException ex)
             {
-
                 throw new Exception($"Erro Ao Buscar Autor: {ex.Message}");
             }
-
         }
 
         [HttpDelete("/delete-autor-pelo-id")]
@@ -81,7 +68,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             catch (AutorDeletePeloIdException ex)
             {
-
                 throw new Exception($"Erro Ao Deletar: {ex.Message}"); ;
             }
         }
@@ -98,10 +84,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             catch (Exception ex)
             {
-
                 throw new Exception($"Erro inesperado ao Buscar os Autores - {ex.Message}"); ;
             }
-
         }
 
         [HttpPut("editar-autor")]
@@ -122,10 +106,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             }
             catch (AutorEditarDadosException ex)
             {
-
                 throw new Exception($"Erro inesperado ao Editar os Autores - {ex.Message}"); ;
             }
-
         }
     }
 }

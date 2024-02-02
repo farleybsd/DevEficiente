@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 {
     public class AutorByIdRequest
     {
@@ -13,4 +11,3 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
         }
     }
 }
-

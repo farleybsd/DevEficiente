@@ -2,7 +2,7 @@
 
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
 {
-    public  class NativeInjectorBootStrapper
+    public class NativeInjectorBootStrapper
     {
         public static void CasaDoCodigoRegisterMongoDBServices(IServiceCollection services)
         {

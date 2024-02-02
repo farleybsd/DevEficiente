@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
     public class AutorEditarCommandHandler : IRequestHandler<AutorEditarCommand, AutorResponse>
     {
@@ -19,7 +17,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                 throw new AutorEditarDadosException();
 
             await _autorRepository.Update(autor.Id, autor);
-            
+
             return new AutorResponse() { Nome = autorAtualizado.Nome, Descricao = autorAtualizado.Descricao, Email = autorAtualizado.Email._email, Instante = autorAtualizado.Instante };
         }
     }
