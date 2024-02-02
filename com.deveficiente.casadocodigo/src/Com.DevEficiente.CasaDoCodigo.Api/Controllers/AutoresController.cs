@@ -44,13 +44,13 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 if (string.IsNullOrEmpty(autorRequest.Id))
                     return BadRequest();
 
-                var queryProduct = await _mediator.Send(autorRequest.RequestToCommand(autorRequest));
-                return Ok(queryProduct);
+                var queryAutor = await _mediator.Send(autorRequest.RequestToCommand(autorRequest));
+                return Ok(queryAutor);
             }
             catch (AutorByIdQueryException ex)
             {
 
-                throw new Exception($"Autor não Encontrado: {ex.Message}");
+                throw new Exception($"Erro Ao Buscar Autor: {ex.Message}");
             }
 
         }
@@ -75,6 +75,24 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 
                 throw new Exception($"Erro Ao Deletar: {ex.Message}"); ;
             }
+        }
+
+        [HttpGet("buscar-todos-autores")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AutorResponse))]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<IEnumerable<AutorResponse>>> BuscarTodosAutores()
+        {
+            try
+            {
+                var queryAutores = await _mediator.Send(new BuscarTodosAutoresCommand());
+                return Ok(queryAutores);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception($"Erro inesperado ao Buscar os Autroes - {ex.Message}"); ;
+            }
+
         }
     }
 }
