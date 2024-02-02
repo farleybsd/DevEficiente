@@ -2,6 +2,7 @@ using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Queries;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
+using Com.DevEficiente.CasaDoCodigo.Domain.Entidades;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,6 +53,28 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 throw new Exception($"Autor não Encontrado: {ex.Message}");
             }
 
+        }
+
+        [HttpDelete("/delete-autor-pelo-id")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult> DeleteAutorPeloId([FromQuery] AutorDeleteRequest autorDeleteRequest)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+
+                var commandDelete = await _mediator.Send(autorDeleteRequest.RequestToCommand(autorDeleteRequest));
+                return Ok(commandDelete);
+            }
+            catch (AutorDeletePeloIdException ex)
+            {
+
+                throw new Exception($"Erro Ao Deletar: {ex.Message}"); ;
+            }
         }
     }
 }

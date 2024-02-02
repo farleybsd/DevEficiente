@@ -16,6 +16,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
         {
             services.AddScoped<IRequestHandler<AutorSaveCommand, AutorResponse>, AutorSaveCommandHandler>();
             services.AddScoped<IRequestHandler<AutorByIdQuery, AutorByIdQueryResult>, AutorByIdQueryHandler>();
+            services.AddScoped<IRequestHandler<AutorDeleteCommand, string>, AutorDeleteCommandHandler>();
         }
     }
 }
