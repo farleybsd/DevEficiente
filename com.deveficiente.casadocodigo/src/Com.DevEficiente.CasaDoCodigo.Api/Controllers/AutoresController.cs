@@ -40,7 +40,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 
                 throw new Exception($"Erro inesperado ao Salvar o Autor - {ex.Message}"); ;
             }
-            
+
         }
 
         [HttpGet("/buscar-autores")]
@@ -109,12 +109,23 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<AutorResponse>> EditarAutor(AutorEditarRequest autorEditarRequest)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest();
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+
+                var commandEditar = await _mediator.Send(autorEditarRequest.RequestToCommand(autorEditarRequest));
+
+                return Ok(commandEditar);
             }
-            var commandEditar = await _mediator.Send(autorEditarRequest.RequestToCommand(autorEditarRequest));
-            return Ok(commandEditar);
+            catch (AutorEditarDadosException ex)
+            {
+
+                throw new Exception($"Erro inesperado ao Editar os Autores - {ex.Message}"); ;
+            }
+
         }
     }
 }

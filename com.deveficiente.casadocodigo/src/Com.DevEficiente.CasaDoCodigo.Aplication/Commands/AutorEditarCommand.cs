@@ -1,4 +1,7 @@
-﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
+﻿using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson;
+
+namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
 {
     public class AutorEditarCommand : IRequest<AutorResponse>
     {
@@ -9,6 +12,9 @@
             Descricao = descricao;
             _id = id;
         }
+
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         public string _id { get; set; }
         public string Nome { get; private set; }
         public string Email { get; private set; }
