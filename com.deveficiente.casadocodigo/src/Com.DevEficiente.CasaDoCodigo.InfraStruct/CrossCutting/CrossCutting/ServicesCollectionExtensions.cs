@@ -1,6 +1,4 @@
-﻿
-using Com.DevEficiente.CasaDoCodigo.Aplication.Queries;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Result;
+﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Result;
 
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
 {
@@ -15,7 +13,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
         {
             services.AddScoped<IRequestHandler<AutorSaveCommand, AutorResponse>, AutorSaveCommandHandler>();
-            services.AddScoped<IRequestHandler<AutorByIdQuery, AutorByIdQueryResult>, AutorByIdQueryHandler>();
+            services.AddScoped<IRequestHandler<AutorByIdQueryCommand, AutorByIdQueryResult>, AutorByIdQueryHandler>();
             services.AddScoped<IRequestHandler<AutorDeleteCommand, string>, AutorDeleteCommandHandler>();
         }
     }

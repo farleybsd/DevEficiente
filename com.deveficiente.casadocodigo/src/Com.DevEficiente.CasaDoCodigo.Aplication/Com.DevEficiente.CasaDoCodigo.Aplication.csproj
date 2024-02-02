@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Com.DevEficiente.CasaDoCodigo.Domain\Com.DevEficiente.CasaDoCodigo.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
 </Project>

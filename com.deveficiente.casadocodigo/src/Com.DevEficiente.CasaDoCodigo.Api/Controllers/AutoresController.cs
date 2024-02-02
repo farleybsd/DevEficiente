@@ -1,5 +1,5 @@
+using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Exceptions;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Queries;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
 using Com.DevEficiente.CasaDoCodigo.Aplication.Response;
 using Com.DevEficiente.CasaDoCodigo.Domain.Entidades;
@@ -37,14 +37,14 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
         [HttpGet("/buscar-autores")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(AutorResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<AutorResponse>> BuscarAutores([FromQuery] AutorByIdQuery autorId)
+        public async Task<ActionResult<AutorResponse>> BuscarAutores([FromQuery] AutorByIdRequest autorRequest)
         {
             try
             {
-                if (string.IsNullOrEmpty(autorId.Id))
+                if (string.IsNullOrEmpty(autorRequest.Id))
                     return BadRequest();
 
-                var queryProduct = await _mediator.Send(autorId);
+                var queryProduct = await _mediator.Send(autorRequest.RequestToCommand(autorRequest));
                 return Ok(queryProduct);
             }
             catch (AutorByIdQueryException ex)
