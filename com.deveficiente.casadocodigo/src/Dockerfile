@@ -6,6 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+ENV ASPNETCORE_ENVIRONMENT=Development
 WORKDIR /src
 COPY ["Com.DevEficiente.CasaDoCodigo.Api/Com.DevEficiente.CasaDoCodigo.Api.csproj", "src/Com.DevEficiente.CasaDoCodigo.Api/"]
 RUN dotnet restore "src/Com.DevEficiente.CasaDoCodigo.Api/Com.DevEficiente.CasaDoCodigo.Api.csproj"
