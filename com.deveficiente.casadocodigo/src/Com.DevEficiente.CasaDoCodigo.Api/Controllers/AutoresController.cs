@@ -29,7 +29,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
             {
                 return BadRequest();
             }
-            var autorSaveCommand = autorRequest.toCommand(autorRequest);
+            var autorSaveCommand = autorRequest.RequestToCommand(autorRequest);
             var command = await _mediator.Send(autorSaveCommand);
             return Ok(command);
         }

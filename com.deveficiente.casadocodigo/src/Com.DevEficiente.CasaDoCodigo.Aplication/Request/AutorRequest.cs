@@ -15,7 +15,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
         [StringLength(400, MinimumLength = 1, ErrorMessage = "A descrição não pode passar de 400 caracteres")]
         public string Descricao { get; set; }
 
-        public AutorSaveCommand toCommand(AutorRequest autor)
+        public AutorSaveCommand RequestToCommand(AutorRequest autor)
         {
             return new AutorSaveCommand(autor.Nome,autor.Email,autor.Descricao);
         }
