@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Com.DevEficiente.CasaDoCodigo.Api/Com.DevEficiente.CasaDoCodigo.Api.csproj", "src/Com.DevEficiente.CasaDoCodigo.Api/"]
+COPY ["Com.DevEficiente.CasaDoCodigo.Api/Com.DevEficiente.CasaDoCodigo.Api.csproj", "src/Com.DevEficiente.CasaDoCodigo.Api/"]
 RUN dotnet restore "src/Com.DevEficiente.CasaDoCodigo.Api/Com.DevEficiente.CasaDoCodigo.Api.csproj"
 COPY . .
-WORKDIR "/src/src/Com.DevEficiente.CasaDoCodigo.Api"
+WORKDIR "/src/Com.DevEficiente.CasaDoCodigo.Api"
 RUN dotnet build "Com.DevEficiente.CasaDoCodigo.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
