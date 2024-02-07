@@ -1,6 +1,6 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
-    public class Autor
+    public class Autor : EntidadeBase
     {
         public Autor(string nome, Email email, string descricao)
         {
@@ -9,10 +9,6 @@
             Descricao = descricao;
             Instante = DateTime.Now;
         }
-
-        [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
 
         public string Nome { get; private set; }
         public Email Email { get; private set; }

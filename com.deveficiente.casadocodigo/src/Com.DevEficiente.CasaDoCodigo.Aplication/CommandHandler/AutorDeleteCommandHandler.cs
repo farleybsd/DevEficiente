@@ -2,12 +2,10 @@
 {
     public class AutorDeleteCommandHandler : IRequestHandler<AutorDeleteCommand, string>
     {
-        private readonly IMediator _mediator;
         private readonly IAutorRepository _autorRepository;
 
         public AutorDeleteCommandHandler(IMediator mediator, IAutorRepository autorRepository)
         {
-            _mediator = mediator;
             _autorRepository = autorRepository;
         }
 

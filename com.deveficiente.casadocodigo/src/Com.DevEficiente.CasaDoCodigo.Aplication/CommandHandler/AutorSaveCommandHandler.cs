@@ -2,13 +2,11 @@
 {
     public class AutorSaveCommandHandler : IRequestHandler<AutorSaveCommand, AutorResponse>
     {
-        private readonly IMediator _mediator;
         private readonly IAutorRepository _autorRepository;
 
         public AutorSaveCommandHandler(IMediator mediator,
                                        IAutorRepository autorRepository)
         {
-            _mediator = mediator;
             _autorRepository = autorRepository;
         }
 
