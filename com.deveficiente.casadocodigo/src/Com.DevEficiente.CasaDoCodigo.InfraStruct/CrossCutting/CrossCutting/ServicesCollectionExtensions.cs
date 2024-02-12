@@ -8,6 +8,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
         {
             services.AddSingleton<IMongoContext, MongoContext>();
             services.AddSingleton<IAutorRepository, AutorRepository>();
+            services.AddSingleton<ICategoriaRepository, CategoriaRepository>();
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
@@ -17,6 +18,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddScoped<IRequestHandler<AutorDeleteCommand, string>, AutorDeleteCommandHandler>();
             services.AddScoped<IRequestHandler<BuscarTodosAutoresCommand, IEnumerable<AutorResponse>>, BuscarTodosAutoresCommandHandler>();
             services.AddScoped<IRequestHandler<AutorEditarCommand, AutorResponse>, AutorEditarCommandHandler>();
+            services.AddScoped<IRequestHandler<CategoriaSaveCommand, CategoriaResponse>, CategoriaSaveCommandHandler>();
         }
     }
 }
