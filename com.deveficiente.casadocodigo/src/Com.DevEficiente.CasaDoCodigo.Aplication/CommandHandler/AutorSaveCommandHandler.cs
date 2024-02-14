@@ -4,8 +4,7 @@
     {
         private readonly IAutorRepository _autorRepository;
 
-        public AutorSaveCommandHandler(IMediator mediator,
-                                       IAutorRepository autorRepository)
+        public AutorSaveCommandHandler(IAutorRepository autorRepository)
         {
             _autorRepository = autorRepository;
         }
