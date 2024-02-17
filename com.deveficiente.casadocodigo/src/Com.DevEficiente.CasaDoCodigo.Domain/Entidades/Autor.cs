@@ -18,6 +18,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
         public Email Email { get; private set; }
         public DateTime Instante { get; private set; }
         public string Descricao { get; private set; }
+
         private void Valido()
         {
             AutorValidator validator = new AutorValidator();

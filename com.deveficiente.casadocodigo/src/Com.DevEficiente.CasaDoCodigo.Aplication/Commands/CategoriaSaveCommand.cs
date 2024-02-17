@@ -11,7 +11,7 @@
 
         public Categoria CommandToEntity(CategoriaSaveCommand categoriaSaveCommand)
         {
-           return new Categoria(categoriaSaveCommand.Nome);
+            return new Categoria(categoriaSaveCommand.Nome);
         }
     }
 }

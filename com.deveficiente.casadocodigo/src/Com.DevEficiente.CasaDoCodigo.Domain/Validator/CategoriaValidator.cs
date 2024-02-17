@@ -4,9 +4,16 @@
     {
         public CategoriaValidator()
         {
-            RuleFor(x => x.Nome)
+            //RuleFor(x => x.Nome)
+            //    .NotNull()
+            //    .WithMessage("Nome Nao pode Ser Vazio");
+
+            When(x => x == null, () =>
+            {
+                RuleFor(x => x.Nome)
                 .NotEmpty()
-                .WithMessage("Nome Nao pode Ser Vazio");
+                .WithMessage("O Nome é obrigatório.");
+            });
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Domain.DomainException;
 using Com.DevEficiente.CasaDoCodigo.Domain.Validator;
-using System.ComponentModel.DataAnnotations;
+
 namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
     public class Categoria : EntidadeBase
@@ -10,7 +10,9 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
             Valido();
             Nome = nome;
         }
+
         public string Nome { get; private set; }
+
         private void Valido()
         {
             CategoriaValidator validator = new CategoriaValidator();

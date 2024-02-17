@@ -1,7 +1,4 @@
-﻿
-
-using Com.DevEficiente.CasaDoCodigo.Domain.Entidades;
-using Com.DevEficiente.CasaDoCodigo.Domain.Interface.Repositorio;
+﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Validadores;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
@@ -16,18 +13,28 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 
         public async Task<CategoriaResponse> Handle(CategoriaSaveCommand request, CancellationToken cancellationToken)
         {
-            var NomeCategoriaExiste = await _repository.BuscarCategoriaPorNome(request.Nome);
-
-            if (NomeCategoriaExiste != null)
-                throw new CategoriaSaveException();
-
+            Valido(request);
             var categoriasave = request.CommandToEntity(request);
             await _repository.Add(categoriasave);
             return new CategoriaResponse()
             {
                 Nome = request.Nome,
             };
+        }
 
+        private async void Valido(CategoriaSaveCommand categoriaSaveCommand)
+        {
+            CategoriaSaveCommandValidation validator = new CategoriaSaveCommandValidation(_repository);
+
+            var results = await validator.ValidateAsync(categoriaSaveCommand);
+
+            if (!results.IsValid)
+            {
+                foreach (var failure in results.Errors)
+                {
+                    throw new CategoriaSaveException(failure.ErrorMessage);
+                }
+            }
         }
     }
 }

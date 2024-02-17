@@ -1,5 +1,4 @@
-﻿
-namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories
+﻿namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories
 {
     public class CategoriaRepository : BaseRepository<Categoria>, ICategoriaRepository
     {
@@ -9,7 +8,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories
 
         public async Task<Categoria> BuscarCategoriaPorNome(string nome)
         {
-            var filter = Builders<Categoria>.Filter.Eq(p => p.Nome,nome);
+            var filter = Builders<Categoria>.Filter.Eq(p => p.Nome, nome);
 
             var data = await DbSet.FindAsync(filter);
 
