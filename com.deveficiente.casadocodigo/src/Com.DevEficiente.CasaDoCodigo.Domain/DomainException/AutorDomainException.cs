@@ -4,7 +4,6 @@
     {
         public AutorDomainException(IEnumerable<FluentValidation.Results.ValidationFailure> validations) : base(validations)
         {
-
         }
     }
 }

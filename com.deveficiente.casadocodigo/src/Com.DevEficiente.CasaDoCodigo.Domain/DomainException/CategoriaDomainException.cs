@@ -4,7 +4,6 @@
     {
         public CategoriaDomainException(IEnumerable<FluentValidation.Results.ValidationFailure> validations) : base(validations)
         {
-            
         }
     }
 }

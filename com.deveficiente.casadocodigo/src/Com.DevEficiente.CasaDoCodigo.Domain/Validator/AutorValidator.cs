@@ -4,7 +4,6 @@
     {
         public AutorValidator()
         {
-
             RuleFor(x => x.Nome)
             .NotNull()
             .WithMessage("O Nome é obrigatório.");
