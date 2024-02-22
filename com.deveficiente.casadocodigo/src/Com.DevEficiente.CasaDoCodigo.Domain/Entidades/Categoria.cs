@@ -1,5 +1,6 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Domain.DomainException;
 using Com.DevEficiente.CasaDoCodigo.Domain.Validator;
+using FluentValidation;
 
 namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
@@ -7,8 +8,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
     {
         public Categoria(string nome)
         {
-            Valido();
             Nome = nome;
+            Valido();
         }
 
         public string Nome { get; private set; }
@@ -21,10 +22,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 
             if (!results.IsValid)
             {
-                foreach (var failure in results.Errors)
-                {
-                    throw new CategoriaDomainException(failure.ErrorMessage);
-                }
+                throw new CategoriaDomainException((IEnumerable<FluentValidation.Results.ValidationFailure>)results.Errors);
+
             }
         }
     }

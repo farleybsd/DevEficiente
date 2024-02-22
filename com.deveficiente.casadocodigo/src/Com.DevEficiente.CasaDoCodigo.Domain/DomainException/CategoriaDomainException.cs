@@ -1,11 +1,10 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.DomainException
 {
-    public class CategoriaDomainException : Exception
+    public class CategoriaDomainException : ValidationException
     {
-        private const string DefaultErrorMessage = "Ja existe uma categoria com esse Nome";
-
-        public CategoriaDomainException(string message = DefaultErrorMessage) : base(message)
+        public CategoriaDomainException(IEnumerable<FluentValidation.Results.ValidationFailure> validations) : base(validations)
         {
+            
         }
     }
 }
