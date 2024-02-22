@@ -1,9 +1,10 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.DomainException
 {
-    public class AutorDomainException : Exception
+    public class AutorDomainException : ValidationException
     {
-        public AutorDomainException(string message) : base(message)
+        public AutorDomainException(IEnumerable<FluentValidation.Results.ValidationFailure> validations) : base(validations)
         {
+
         }
     }
 }

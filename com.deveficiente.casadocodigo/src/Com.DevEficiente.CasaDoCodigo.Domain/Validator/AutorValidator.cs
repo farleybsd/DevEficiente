@@ -4,31 +4,23 @@
     {
         public AutorValidator()
         {
-            When(x => x == null, () =>
-            {
-                RuleFor(x => x.Nome)
-                .NotEmpty()
-                .WithMessage("O Nome é obrigatório.");
-            });
 
-            When(x => x == null, () =>
-            {
-                RuleFor(x => x.Email)
-                .NotEmpty()
-                .WithMessage("E-mail Obrigatorio.");
-            });
+            RuleFor(x => x.Nome)
+            .NotNull()
+            .WithMessage("O Nome é obrigatório.");
 
-            When(x => x == null, () =>
-            {
-                RuleFor(x => x.Descricao)
-                .NotEmpty()
-                .WithMessage("A descrição é obrigatória");
-            });
+            RuleFor(x => x.Email)
+            .NotNull()
+            .WithMessage("E-mail Obrigatorio.");
+
+            RuleFor(x => x.Descricao)
+            .NotNull()
+            .WithMessage("A descrição é obrigatória");
 
             When(x => x != null, () =>
             {
                 RuleFor(x => x.Descricao)
-                .NotEmpty()
+                .NotNull()
                 .Length(1, 100).When(autor => !string.IsNullOrEmpty(autor.Descricao))
                 .WithMessage("A descrição não pode passar de 400 caracteres");
             });

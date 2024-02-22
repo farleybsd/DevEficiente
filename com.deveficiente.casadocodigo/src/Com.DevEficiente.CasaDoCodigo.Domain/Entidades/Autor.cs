@@ -27,10 +27,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 
             if (!results.IsValid)
             {
-                foreach (var failure in results.Errors)
-                {
-                    throw new AutorDomainException(failure.ErrorMessage);
-                }
+                throw new AutorDomainException((IEnumerable<FluentValidation.Results.ValidationFailure>)results.Errors);
+
             }
         }
     }
