@@ -1,4 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
+﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Mappers;
 
 namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 {
@@ -8,14 +8,16 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly ILogger<LivroController> _logger;
+        private  readonly LivroMapper _livroMapper ;
         public LivroController(IMediator mediator, ILogger<LivroController> logger)
         {
             _mediator = mediator;
             _logger = logger;
+            _livroMapper = new LivroMapper();
         }
 
         [HttpPost("/CriarLivro")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CategoriaResponse))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LivroResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> CriarLivro([FromBody] LivroCreateRequest livroRequest)
@@ -26,14 +28,15 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 {
                     return BadRequest();
                 }
-               
+                var autorSaveCommand = _livroMapper.RequestToCommand(livroRequest);
+                var command = await _mediator.Send(autorSaveCommand);
+                return Ok(command);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Erro inesperado ao Salvar Uma Categoria  - {ex.Message}");
-                throw new Exception("Erro inesperado ao Salvar Uma Categoria");
+                _logger.LogError($"Erro inesperado ao Salvar Um Livro  - {ex.Message}");
+                throw new Exception("Erro inesperado ao Salvar Um Livro");
             }
-            return Ok();
         }
     }
 }

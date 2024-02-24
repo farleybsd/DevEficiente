@@ -2,9 +2,9 @@
 {
     public class Isbn
     {
-        public int isbn { get; private set; }
+        public string isbn { get; private set; }
 
-        public Isbn(int isbn)
+        public Isbn(string isbn)
         {
             this.isbn = isbn;
         }
