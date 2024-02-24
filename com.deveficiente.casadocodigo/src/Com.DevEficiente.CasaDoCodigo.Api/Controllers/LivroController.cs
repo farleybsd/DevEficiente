@@ -8,7 +8,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly ILogger<LivroController> _logger;
-        private  readonly LivroMapper _livroMapper ;
+        private readonly LivroMapper _livroMapper;
+
         public LivroController(IMediator mediator, ILogger<LivroController> logger)
         {
             _mediator = mediator;

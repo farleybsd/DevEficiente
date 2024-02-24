@@ -5,8 +5,7 @@
         public override bool IsValid(object value)
         {
             DateTime d = Convert.ToDateTime(value);
-            return d >= DateTime.Now; 
-
+            return d >= DateTime.Now;
         }
     }
 }

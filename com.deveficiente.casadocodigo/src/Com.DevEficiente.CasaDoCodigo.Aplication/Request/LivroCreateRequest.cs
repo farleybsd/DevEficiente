@@ -1,5 +1,4 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Aplication.DataNotations;
-using System.Runtime.InteropServices;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 {
@@ -19,6 +18,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
         [Required(ErrorMessage = "Preço é obrigatório.")]
         [Range(20d, (double)decimal.MaxValue, ErrorMessage = "Preço é obrigatório e o mínimo é de 20")]
         public decimal Preco { get; set; }
+
         [Range(100, (double)decimal.MaxValue, ErrorMessage = "Número de páginas é obrigatória e o mínimo é de 100")]
         public int NumeroPaginas { get; set; }
 
@@ -33,6 +33,5 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 
         [Required(ErrorMessage = "O autor não pode ser nulo.")]
         public string Autor { get; set; }
-
     }
 }

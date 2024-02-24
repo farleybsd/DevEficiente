@@ -1,6 +1,4 @@
-﻿
-
-namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories
+﻿namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.Data.Repositories
 {
     public class LivroRepository : BaseRepository<Livro>, ILivroRepository
     {
