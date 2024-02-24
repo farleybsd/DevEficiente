@@ -9,6 +9,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddSingleton<IMongoContext, MongoContext>();
             services.AddSingleton<IAutorRepository, AutorRepository>();
             services.AddSingleton<ICategoriaRepository, CategoriaRepository>();
+            services.AddSingleton<ILivroRepository, LivroRepository>();
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
