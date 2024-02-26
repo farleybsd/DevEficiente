@@ -1,4 +1,7 @@
-﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
+﻿using Com.DevEficiente.CasaDoCodigo.Domain.DomainException;
+using Com.DevEficiente.CasaDoCodigo.Domain.Validator;
+
+namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
     public class Livro
     {
@@ -15,6 +18,7 @@
             DataPublicacao = dataPublicacao;
             Categoria = categoria;
             Autor = autor;
+            Valido();
         }
 
         public TituloLivro Titulo { get; private set; }
@@ -26,5 +30,17 @@
         public DataPublicacao DataPublicacao { get; private set; }
         public Categoria Categoria { get; private set; }
         public AutorLivro Autor { get; private set; }
+
+        private void Valido()
+        {
+            LivroValidator validator = new LivroValidator();
+
+            var results = validator.Validate(this);
+
+            if (!results.IsValid)
+            {
+                throw new LivroDomainException((IEnumerable<FluentValidation.Results.ValidationFailure>)results.Errors);
+            }
+        }
     }
 }
