@@ -1,7 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Commands;
-using Com.DevEficiente.CasaDoCodigo.Aplication.Validadores;
-using Com.DevEficiente.CasaDoCodigo.Domain.DomainException;
-using Com.DevEficiente.CasaDoCodigo.Domain.Validator;
+﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Validadores;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
@@ -32,7 +29,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
             };
         }
 
-        private async  void UniqueTite(LivroSaveCommand livroSaveCommand)
+        private async void UniqueTite(LivroSaveCommand livroSaveCommand)
         {
             LivroSaveCommandValidation validator = new LivroSaveCommandValidation(_repository);
 
@@ -45,7 +42,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                     throw new LivroSaveException(failure.ErrorMessage);
                 }
             }
-
         }
     }
 }
