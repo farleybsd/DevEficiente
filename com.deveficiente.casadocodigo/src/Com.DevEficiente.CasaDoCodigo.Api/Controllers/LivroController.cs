@@ -61,6 +61,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 throw new Exception("Erro Ao Buscar Livro:");
             }
         }
+
         [HttpGet("/DetalheLivros-Site")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DetalhesDoLivroSiteResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

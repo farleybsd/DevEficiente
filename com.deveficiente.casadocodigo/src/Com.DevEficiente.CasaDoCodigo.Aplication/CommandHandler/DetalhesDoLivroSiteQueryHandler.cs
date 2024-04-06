@@ -1,5 +1,4 @@
-﻿
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
     public class DetalhesDoLivroSiteQueryHandler : IRequestHandler<DetalhesDoLivroSiteCommand, DetalhesDoLivroSiteResponse>
     {
@@ -23,8 +22,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                 Preco = autor.PrecoLivro.Preco,
                 Resumo = autor.Resumo.Resumo,
                 DataPublicacao = autor.DataPublicacao.DataDePublicacao.ToString("dd/MM/yyyy")
-
-        };
+            };
         }
     }
 }
