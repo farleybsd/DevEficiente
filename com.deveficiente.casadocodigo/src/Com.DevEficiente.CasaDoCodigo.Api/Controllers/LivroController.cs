@@ -61,5 +61,25 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 throw new Exception("Erro Ao Buscar Livro:");
             }
         }
+        [HttpGet("/DetalheLivros-Site")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(DetalhesDoLivroSiteResponse))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DetalhesDoLivroSiteResponse>> DetalheLivrosSite([FromQuery] DetalhesDoLivroSiteRequest detalhesDoLivroSiteRequest)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(detalhesDoLivroSiteRequest.Id))
+                    return BadRequest();
+
+                var queryAutor = await _mediator.Send(detalhesDoLivroSiteRequest.RequestToCommand(detalhesDoLivroSiteRequest));
+                return Ok(queryAutor);
+            }
+            catch (AutorByIdQueryException ex)
+            {
+                _logger.LogError($"Erro Ao Buscar Livro: {ex.Message}");
+                throw new Exception("Erro Ao Buscar Livro:");
+            }
+        }
     }
 }

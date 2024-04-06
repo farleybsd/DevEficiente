@@ -7,6 +7,5 @@
         public LivroSaveException(string message = DefaultErrorMessage) : base(message)
         {
         }
-
     }
 }

@@ -4,7 +4,6 @@
     {
         public LivroDomainException(IEnumerable<FluentValidation.Results.ValidationFailure> validations) : base(validations)
         {
-
         }
     }
 }

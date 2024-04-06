@@ -3,7 +3,7 @@ using Com.DevEficiente.CasaDoCodigo.Domain.Validator;
 
 namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
-    public class Livro :  EntidadeBase
+    public class Livro : EntidadeBase
     {
         public Livro(TituloLivro titulo, ResumoLivro resumo, SumarioLivro sumario,
                      PrecoLivro precoLivro, NumeroDePaginas numeroDePaginas, Isbn isbn,

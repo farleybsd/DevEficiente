@@ -22,6 +22,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddScoped<IRequestHandler<CategoriaSaveCommand, CategoriaResponse>, CategoriaSaveCommandHandler>();
             services.AddScoped<IRequestHandler<LivroSaveCommand, LivroResponse>, LivroSaveCommandHandler>();
             services.AddScoped<IRequestHandler<LivroByIdQueryCommand, LivroByIdQueryResult>, LivroByIdQueryHandler>();
+            services.AddScoped<IRequestHandler<DetalhesDoLivroSiteCommand, DetalhesDoLivroSiteResponse>, DetalhesDoLivroSiteQueryHandler>();
         }
     }
 }

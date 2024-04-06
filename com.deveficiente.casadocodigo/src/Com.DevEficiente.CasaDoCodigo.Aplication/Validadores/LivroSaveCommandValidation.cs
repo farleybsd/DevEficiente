@@ -1,5 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Domain.Interface.Repositorio;
-using FluentValidation;
+﻿using FluentValidation;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.Validadores
 {
@@ -15,15 +14,15 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Validadores
 
         private void TituloTemQueSerUnico()
         {
-
             RuleFor(mem => mem.Titulo).MustAsync(async (entity, value, c) => await IsUniqueTitle(value, c))
                .WithMessage("Titulo do Livro Tem Que Ser Unico");
         }
+
         private async Task<bool> IsUniqueTitle(string titulo, CancellationToken cancellation)
         {
             bool isTituloUnique = await _repository.IsTituloUnique(titulo);
 
-          return isTituloUnique;
+            return isTituloUnique;
         }
     }
 }

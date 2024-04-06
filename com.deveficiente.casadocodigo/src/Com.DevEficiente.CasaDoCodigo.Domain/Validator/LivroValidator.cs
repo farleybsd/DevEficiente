@@ -5,6 +5,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Validator
     public class LivroValidator : AbstractValidator<Livro>
     {
         private readonly IRepository<Livro> LivroCollection;
+
         public LivroValidator()
         {
             TituloObrigatorio();
@@ -90,9 +91,5 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Validator
            .NotNull()
            .WithMessage("O Categoria é obrigatório.");
         }
-
-        
     }
 }
-
-
