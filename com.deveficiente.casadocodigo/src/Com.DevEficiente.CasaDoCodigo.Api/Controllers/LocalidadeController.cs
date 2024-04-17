@@ -1,4 +1,5 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Mappers;
+using System.ComponentModel.DataAnnotations;
 
 namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 {
@@ -31,11 +32,17 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 var command = await _mediator.Send(paisSaveCommand);
                 return Ok(command);
             }
+            catch (ValidationException ex)
+            {
+                _logger.LogError($"Erro ao Salvar Um País: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
             catch (Exception ex)
             {
-                _logger.LogError($"Erro inesperado ao Salvar Um Livro  - {ex.Message}");
-                throw new Exception("Erro inesperado ao Salvar Um Livro");
+                _logger.LogError($"Erro inesperado ao Salvar Um Pais  - {ex.Message}");
+                throw new Exception("Erro inesperado ao Salvar Um Pais");
             }
+            
         }
 
     }

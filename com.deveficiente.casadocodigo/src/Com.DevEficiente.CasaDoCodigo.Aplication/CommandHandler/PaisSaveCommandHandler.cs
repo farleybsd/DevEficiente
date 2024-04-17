@@ -1,5 +1,7 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Validadores;
 using FluentValidation;
+using MongoDB.Driver;
+using ValidationException = System.ComponentModel.DataAnnotations.ValidationException;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 {
@@ -14,12 +16,19 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 
         public async Task<PaisResponse> Handle(PaisSaveCommand request, CancellationToken cancellationToken)
         {
-            var categoriasave = request.CommandToEntity(request);
-            await _repository.Add(categoriasave);
-            return new PaisResponse()
+            try
             {
-                NomePais = request.NomePais,
-            };
+                var pais = request.CommandToEntity(request);
+                await _repository.Add(pais);
+                return new PaisResponse()
+                {
+                    NomePais = request.NomePais,
+                };
+            }
+            catch (MongoWriteException ex) when (ex.WriteError.Category == ServerErrorCategory.DuplicateKey)
+            {
+                throw new ValidationException("O país já existe.");
+            }
         }
     }
 }
