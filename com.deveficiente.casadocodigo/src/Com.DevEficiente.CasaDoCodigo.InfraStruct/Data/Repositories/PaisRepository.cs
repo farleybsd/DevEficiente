@@ -9,7 +9,6 @@
 
         public void CriarIndiceUnico()
         {
-
             var options = new CreateIndexOptions
             {
                 Unique = true,
@@ -27,7 +26,6 @@
             {
                 DbSet.Indexes.CreateOne(indexDefinition, options);
             }
-
         }
     }
 }

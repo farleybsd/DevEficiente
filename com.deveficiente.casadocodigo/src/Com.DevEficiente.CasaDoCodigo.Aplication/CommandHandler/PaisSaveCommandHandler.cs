@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Validadores;
-using FluentValidation;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using ValidationException = System.ComponentModel.DataAnnotations.ValidationException;
 
 namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler

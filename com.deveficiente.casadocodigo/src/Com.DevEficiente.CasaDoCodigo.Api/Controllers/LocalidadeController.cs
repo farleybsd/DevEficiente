@@ -1,5 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Mappers;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 {
@@ -9,6 +8,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly ILogger<LocalidadeController> _logger;
+
         public LocalidadeController(IMediator mediator,
                                     ILogger<LocalidadeController> logger)
         {
@@ -42,7 +42,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 _logger.LogError($"Erro inesperado ao Salvar Um Pais  - {ex.Message}");
                 throw new Exception("Erro inesperado ao Salvar Um Pais");
             }
-            
         }
 
         [HttpPost("/CriarEstado")]
@@ -71,8 +70,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 _logger.LogError($"Erro inesperado ao Salvar Um Estado  - {ex.Message}");
                 throw new Exception("Erro inesperado ao Salvar Um Estado");
             }
-
         }
-
     }
 }

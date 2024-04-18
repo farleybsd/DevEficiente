@@ -13,7 +13,7 @@
 
         public Estado CommandToEntity(EstadoSaveCommand paisSaveCommand)
         {
-            return new Estado(paisSaveCommand._IdPais,paisSaveCommand._NomeEstado);
+            return new Estado(paisSaveCommand._IdPais, paisSaveCommand._NomeEstado);
         }
     }
 }

@@ -5,7 +5,7 @@
         [Required(ErrorMessage = "O Nome do pais é obrigatório.")]
         public string NomePais { get; set; }
 
-        public PaisSaveCommand RequestToCommand(PaisRequest paisSaveCommand) 
+        public PaisSaveCommand RequestToCommand(PaisRequest paisSaveCommand)
         {
             return new PaisSaveCommand(paisSaveCommand.NomePais);
         }
