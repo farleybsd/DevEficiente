@@ -48,5 +48,28 @@
         {
             await DbSet.InsertOneAsync(obj);
         }
+        // Método Template que coordena a criação do índice
+        public void CriarIndiceUnico(string campo)
+        {
+            var options = new CreateIndexOptions
+            {
+                Unique = true,
+                Collation = new Collation("pt", strength: CollationStrength.Primary, caseLevel: false)
+            };
+
+            var field = new StringFieldDefinition<TEntity>(campo);
+            var indexDefinition = new IndexKeysDefinitionBuilder<TEntity>().Ascending(field);
+
+            // Verifica se a coleção já possui índices
+            var indexes = DbSet.Indexes.List().ToList();
+            bool collectionHasIndexes = indexes.Any();
+
+            // Cria o índice apenas se a coleção não tiver índices ainda
+            if (!collectionHasIndexes)
+            {
+                DbSet.Indexes.CreateOne(indexDefinition, options);
+            }
+        }
+
     }
 }
