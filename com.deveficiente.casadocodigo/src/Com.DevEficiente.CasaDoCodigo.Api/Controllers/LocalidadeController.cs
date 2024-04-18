@@ -20,7 +20,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaisResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> CriarLivro([FromBody] PaisRequest paisRequest)
+        public async Task<IActionResult> CriarPais([FromBody] PaisRequest paisRequest)
         {
             try
             {
@@ -43,6 +43,35 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
                 throw new Exception("Erro inesperado ao Salvar Um Pais");
             }
             
+        }
+
+        [HttpPost("/CriarEstado")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EstadoResponse))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CriarEstado([FromBody] EstadoRequest estadoRequest)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest();
+                }
+                var paisSaveCommand = estadoRequest.RequestToCommand(estadoRequest);
+                var command = await _mediator.Send(paisSaveCommand);
+                return Ok(command);
+            }
+            catch (ValidationException ex)
+            {
+                _logger.LogError($"Erro ao Salvar Um Estado: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Erro inesperado ao Salvar Um Estado  - {ex.Message}");
+                throw new Exception("Erro inesperado ao Salvar Um Estado");
+            }
+
         }
 
     }

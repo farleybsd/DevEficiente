@@ -11,6 +11,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddSingleton<ICategoriaRepository, CategoriaRepository>();
             services.AddSingleton<ILivroRepository, LivroRepository>();
             services.AddSingleton<IPaisRepository, PaisRepository>();
+            services.AddSingleton<IEstadoRepository, EstadoRepository>();
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
@@ -25,6 +26,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddScoped<IRequestHandler<LivroByIdQueryCommand, LivroByIdQueryResult>, LivroByIdQueryHandler>();
             services.AddScoped<IRequestHandler<DetalhesDoLivroSiteCommand, DetalhesDoLivroSiteResponse>, DetalhesDoLivroSiteQueryHandler>();
             services.AddScoped<IRequestHandler<PaisSaveCommand, PaisResponse>, PaisSaveCommandHandler>();
+            services.AddScoped<IRequestHandler<EstadoSaveCommand, EstadoResponse>, EstadoSaveCommandHandler>();
         }
     }
 }
