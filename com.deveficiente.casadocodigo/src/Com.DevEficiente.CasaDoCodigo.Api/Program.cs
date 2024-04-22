@@ -9,7 +9,8 @@ builder.Services.AddSwaggerGen();
 // Add MediatR with the assembly containing your request handlers
 builder.Services.AddMediatR(typeof(Program).Assembly);
 NativeInjectorBootStrapper.CasaDoCodigoRegisterMongoDBServices(builder.Services);
-NativeInjectorBootStrapper.CasaDoCodigoRegisterMediatR(builder.Services);
+NativeInjectorBootStrapper.CasaDoCodigoRegisterMediatR(builder.Services); 
+    NativeInjectorBootStrapper.CasaDoCodigoRegisterBuilder(builder.Services);
 
 var app = builder.Build();
 

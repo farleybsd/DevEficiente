@@ -1,4 +1,5 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Result;
+using Com.DevEficiente.CasaDoCodigo.Domain.Builders;
 
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
 {
@@ -12,6 +13,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddSingleton<ILivroRepository, LivroRepository>();
             services.AddSingleton<IPaisRepository, PaisRepository>();
             services.AddSingleton<IEstadoRepository, EstadoRepository>();
+            services.AddSingleton<ICompraRepository, CompraRepository>();
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
@@ -27,6 +29,12 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddScoped<IRequestHandler<DetalhesDoLivroSiteCommand, DetalhesDoLivroSiteResponse>, DetalhesDoLivroSiteQueryHandler>();
             services.AddScoped<IRequestHandler<PaisSaveCommand, PaisResponse>, PaisSaveCommandHandler>();
             services.AddScoped<IRequestHandler<EstadoSaveCommand, EstadoResponse>, EstadoSaveCommandHandler>();
+            services.AddScoped<IRequestHandler<CompraSaveCommand, CompraResult>, CompraSaveCommandHandler>();
+        }
+
+        public static void CasaDoCodigoRegisterBuilder(IServiceCollection services)
+        {
+            services.AddScoped<IConstrutorCompraBuilder,ConstrutorCompra>();
         }
     }
 }
