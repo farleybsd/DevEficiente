@@ -5,6 +5,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Builders
     public class ConstrutorCompra : IConstrutorCompraBuilder
     {
         private Compra _compra = new Compra();
+
         public void ConstruirDocumentoCompra(string documento)
         {
             DocumentoCompra documentoCompra = new DocumentoCompra(documento);

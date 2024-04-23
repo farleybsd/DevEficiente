@@ -37,7 +37,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
 
         public static void CasaDoCodigoRegisterBuilder(IServiceCollection services)
         {
-            services.AddScoped<IConstrutorCompraBuilder,ConstrutorCompra>();
+            services.AddScoped<IConstrutorCompraBuilder, ConstrutorCompra>();
             services.AddScoped<IConstrutorCupomBuilder, ConstrutorCupom>();
         }
     }

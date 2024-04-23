@@ -18,8 +18,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
             var consturorCompra = new ConstrutorCompra();
             var diretorCompra = new DiretorCompra(consturorCompra);
 
-            diretorCompra.ConstruirCompra(request.Email, request.nome, request.sobrenome,request.documento, request.endereco, request.complemento,
-                                          request.cidade, request.cep,request.pais, request.estado, request.telefone);
+            diretorCompra.ConstruirCompra(request.Email, request.nome, request.sobrenome, request.documento, request.endereco, request.complemento,
+                                          request.cidade, request.cep, request.pais, request.estado, request.telefone);
 
             var compraSave = consturorCompra.ObterCompra();
 
@@ -39,7 +39,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                 telefone = request.telefone,
                 cep = request.cep
             };
-
         }
     }
 }

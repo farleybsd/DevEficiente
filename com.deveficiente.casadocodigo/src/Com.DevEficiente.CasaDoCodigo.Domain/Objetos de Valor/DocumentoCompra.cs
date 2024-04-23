@@ -5,7 +5,7 @@
 
     namespace Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor
     {
-        public  class DocumentoCompra
+        public class DocumentoCompra
         {
             public string _documento { get; private set; }
 
@@ -33,5 +33,4 @@
             }
         }
     }
-
 }

@@ -48,6 +48,7 @@
         {
             await DbSet.InsertOneAsync(obj);
         }
+
         // Método Template que coordena a criação do índice
         public void CriarIndiceUnico(string campo)
         {
@@ -70,6 +71,5 @@
                 DbSet.Indexes.CreateOne(indexDefinition, options);
             }
         }
-
     }
 }

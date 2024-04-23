@@ -1,6 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Request;
-
-namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
+﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
 {
     public class CupomSaveCommand : IRequest<CupomResult>
     {
@@ -14,6 +12,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
             _Percentual = percentual;
             _Validade = validade;
         }
+
         public Cupom CommandToEntity(CupomSaveCommand paisSaveCommand)
         {
             return new Cupom(paisSaveCommand._Codigo, paisSaveCommand._Percentual, DateTime.Parse(paisSaveCommand._Validade));

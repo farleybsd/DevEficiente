@@ -4,6 +4,7 @@
     {
         public string _Nome { get; private set; }
         public string _Sobrenome { get; private set; }
+
         public Pessoa(string nome, string sobrenome)
         {
             if (string.IsNullOrWhiteSpace(nome))

@@ -5,6 +5,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor
     public class Cpf
     {
         private string _cpf;
+
         public string Valor
         {
             get { return _cpf; }

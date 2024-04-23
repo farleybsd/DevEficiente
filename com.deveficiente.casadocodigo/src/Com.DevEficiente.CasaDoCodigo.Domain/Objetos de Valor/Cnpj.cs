@@ -5,6 +5,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor
     public class Cnpj
     {
         private string _cnpj;
+
         public string Valor
         {
             get { return _cnpj; }
@@ -15,7 +16,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Objetos_de_Valor
                 _cnpj = value;
             }
         }
-
 
         public Cnpj(string cnpj)
         {

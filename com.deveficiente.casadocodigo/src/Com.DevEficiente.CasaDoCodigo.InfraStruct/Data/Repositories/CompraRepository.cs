@@ -4,7 +4,6 @@
     {
         public CompraRepository(IMongoContext context) : base(context)
         {
-  
         }
     }
 }

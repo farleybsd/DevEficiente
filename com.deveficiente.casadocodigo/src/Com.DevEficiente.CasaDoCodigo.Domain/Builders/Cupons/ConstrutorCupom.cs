@@ -1,5 +1,4 @@
-﻿
-namespace Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons
+﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons
 {
     public class ConstrutorCupom : IConstrutorCupomBuilder
     {
@@ -22,7 +21,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons
 
         public Cupom ObterCupom()
         {
-           return _cupom;
+            return _cupom;
         }
     }
 }

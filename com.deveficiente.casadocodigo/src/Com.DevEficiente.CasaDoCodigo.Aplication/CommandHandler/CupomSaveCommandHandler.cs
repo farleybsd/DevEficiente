@@ -1,5 +1,4 @@
-﻿using Com.DevEficiente.CasaDoCodigo.Domain.Builders;
-using Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons;
+﻿using Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons;
 using MongoDB.Driver;
 using ValidationException = System.ComponentModel.DataAnnotations.ValidationException;
 
@@ -21,7 +20,6 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                 var cupomSaveCommand = request.CommandToEntity(request);
                 var consturorCupom = new ConstrutorCupom();
                 var diretorCupom = new DiretorCupom(consturorCupom);
-               
 
                 diretorCupom.ConstruirCompra(cupomSaveCommand._Codigo, cupomSaveCommand._Percentual, cupomSaveCommand._Validade);
 

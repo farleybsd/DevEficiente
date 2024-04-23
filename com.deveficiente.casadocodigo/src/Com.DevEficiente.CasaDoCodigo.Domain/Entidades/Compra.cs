@@ -14,9 +14,9 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
             Estado = estado ?? throw new ArgumentNullException(nameof(estado), "O estado não pode ser nulo");
             Telefone = telefone ?? throw new ArgumentNullException(nameof(telefone), "O telefone não pode ser nulo");
         }
+
         public Compra()
         {
-            
         }
 
         public Email Email { get; private set; }
@@ -31,6 +31,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
         {
             DocumentoCompra = documentoCompra;
         }
+
         public void DefinirEmailCompra(Email email)
         {
             Email = email;
@@ -45,10 +46,12 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
         {
             Localizacao = localizacao;
         }
+
         public void DefinirPaisCompra(Pais pais)
         {
             Pais = pais;
         }
+
         public void DefinirPessoaCompra(Pessoa pessoa)
         {
             Pessoa = pessoa;

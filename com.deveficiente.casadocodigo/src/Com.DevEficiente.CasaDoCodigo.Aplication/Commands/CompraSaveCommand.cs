@@ -16,7 +16,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
         public string estado { get; set; }
         public string telefone { get; set; }
         public string cep { get; set; }
-        public CompraSaveCommand(string nome, string sobrenome, string documento, string endereco, string complemento, string cidade, string pais, string estado, string telefone, string cep,string email)
+
+        public CompraSaveCommand(string nome, string sobrenome, string documento, string endereco, string complemento, string cidade, string pais, string estado, string telefone, string cep, string email)
         {
             this.nome = nome ?? throw new ArgumentNullException(nameof(nome), "O nome não pode ser nulo");
             this.sobrenome = sobrenome ?? throw new ArgumentNullException(nameof(sobrenome), "O sobrenome não pode ser nulo");

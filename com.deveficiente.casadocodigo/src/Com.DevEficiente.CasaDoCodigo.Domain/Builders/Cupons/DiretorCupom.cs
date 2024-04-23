@@ -14,7 +14,6 @@
             _construtorCupomBuilder.ConstruirCodigo(_Codigo);
             _construtorCupomBuilder.ConstruirPercentual(_Percentual);
             _construtorCupomBuilder.ConstruirValidade(_validade);
-           
         }
     }
 }
