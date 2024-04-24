@@ -25,8 +25,8 @@
                 {
                     return BadRequest();
                 }
-                var paisSaveCommand = compraRequest.RequestToCommand(compraRequest);
-                var command = await _mediator.Send(paisSaveCommand);
+                var CompraSaveCommand = compraRequest.RequestToCommand(compraRequest);
+                var command = await _mediator.Send(CompraSaveCommand);
                 return Ok(command);
             }
             catch (Exception ex)

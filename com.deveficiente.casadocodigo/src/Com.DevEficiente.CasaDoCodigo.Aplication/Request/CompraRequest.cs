@@ -1,4 +1,6 @@
-﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
+﻿using Com.DevEficiente.CasaDoCodigo.Aplication.DataNotations;
+
+namespace Com.DevEficiente.CasaDoCodigo.Aplication.Request
 {
     public class CompraRequest
     {
@@ -35,7 +37,8 @@
 
         [Required(ErrorMessage = "Cep Obrigatorio")]
         public string cep { get; set; }
-
+        [ExisteCupomAttribute(ErrorMessage = "O Cupom nao existe no banco de dados.")]
+        public string IdCupom { get; set; }
         public CompraSaveCommand RequestToCommand(CompraRequest compraRequest)
         {
             return new CompraSaveCommand(compraRequest.nome,
@@ -48,7 +51,8 @@
                 compraRequest.estado,
                 compraRequest.telefone,
                 compraRequest.cep,
-                compraRequest.Email);
+                compraRequest.Email,
+                compraRequest.IdCupom);
         }
     }
 }

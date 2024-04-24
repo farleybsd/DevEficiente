@@ -5,10 +5,11 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
     public class CompraSaveCommandHandler : IRequestHandler<CompraSaveCommand, CompraResult>
     {
         private readonly ICompraRepository _repository;
-
-        public CompraSaveCommandHandler(ICompraRepository repository)
+        private readonly ICupomRepository _cupomRepository;
+        public CompraSaveCommandHandler(ICompraRepository repository, ICupomRepository cupomRepository)
         {
             _repository = repository;
+            _cupomRepository = cupomRepository;
         }
 
         public async Task<CompraResult> Handle(CompraSaveCommand request, CancellationToken cancellationToken)
@@ -23,9 +24,13 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
 
             var compraSave = consturorCompra.ObterCompra();
 
+            var cupom = await _cupomRepository.GetById(request.IdCupom);
+
+            compraSave.DefinirCupomDaCompra(cupom);
+
             await _repository.Add(compraSave);
 
-            return new CompraResult()
+            var compraResult = new CompraResult()
             {
                 email = request.Email,
                 nome = request.nome,
@@ -37,8 +42,23 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.CommandHandler
                 pais = request.pais,
                 estado = request.estado,
                 telefone = request.telefone,
-                cep = request.cep
+                cep = request.cep,
             };
+
+            if (cupom.CupomEstaValido())
+            {
+                compraResult._Codigo = cupom._Codigo;
+                compraResult._Percentual = cupom._Percentual;
+                compraResult._Validade = cupom._Validade.ToString("dd/MM/yyyy");
+            }
+            else
+            {
+                compraResult._Codigo = null;
+                compraResult._Percentual = 0;
+                compraResult._Validade = null;
+            }
+
+            return compraResult;
         }
     }
 }

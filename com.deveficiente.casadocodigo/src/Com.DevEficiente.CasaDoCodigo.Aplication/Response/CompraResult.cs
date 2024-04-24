@@ -13,5 +13,8 @@
         public string estado { get; set; }
         public string telefone { get; set; }
         public string cep { get; set; }
+        public string _Codigo { get;  set; }
+        public int _Percentual { get;  set; }
+        public string _Validade { get;  set; }
     }
 }

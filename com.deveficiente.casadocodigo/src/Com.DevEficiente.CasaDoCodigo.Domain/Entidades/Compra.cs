@@ -26,6 +26,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
         public Pais Pais { get; private set; }
         public Estado Estado { get; private set; }
         public Telefone Telefone { get; set; }
+        public Cupom Cupom { get; set; }
 
         public void DefinirDocumentoCompra(DocumentoCompra documentoCompra)
         {
@@ -60,6 +61,12 @@ namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
         public void DefinirTelefoneCompra(Telefone telefone)
         {
             Telefone = telefone;
+        }
+
+        public void DefinirCupomDaCompra(Cupom cupom)
+        {
+            if (cupom.CupomEstaValido())
+                Cupom = cupom;
         }
     }
 }

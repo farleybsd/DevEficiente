@@ -16,8 +16,8 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
         public string estado { get; set; }
         public string telefone { get; set; }
         public string cep { get; set; }
-
-        public CompraSaveCommand(string nome, string sobrenome, string documento, string endereco, string complemento, string cidade, string pais, string estado, string telefone, string cep, string email)
+        public string IdCupom { get; set; }
+        public CompraSaveCommand(string nome, string sobrenome, string documento, string endereco, string complemento, string cidade, string pais, string estado, string telefone, string cep, string email, string? idCupom)
         {
             this.nome = nome ?? throw new ArgumentNullException(nameof(nome), "O nome não pode ser nulo");
             this.sobrenome = sobrenome ?? throw new ArgumentNullException(nameof(sobrenome), "O sobrenome não pode ser nulo");
@@ -30,6 +30,7 @@ namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
             this.telefone = telefone ?? throw new ArgumentNullException(nameof(telefone), "O telefone não pode ser nulo");
             this.cep = cep ?? throw new ArgumentNullException(nameof(cep), "O cep não pode ser nulo");
             this.Email = email;
+            IdCupom = idCupom;
         }
 
         public Compra CommandToEntity(CompraSaveCommand compraSaveCommand)

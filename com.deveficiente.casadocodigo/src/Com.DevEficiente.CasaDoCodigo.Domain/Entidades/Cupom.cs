@@ -1,6 +1,6 @@
 ﻿namespace Com.DevEficiente.CasaDoCodigo.Domain.Entidades
 {
-    public class Cupom
+    public class Cupom : EntidadeBase
     {
         public string _Codigo { get; private set; }
         public int _Percentual { get; private set; }
@@ -30,6 +30,11 @@
         public void DefinirValidadelCupom(DateTime _validade)
         {
             _Validade = _validade;
+        }
+
+        public bool CupomEstaValido()
+        {
+            return DateTime.Now < _Validade;
         }
     }
 }
