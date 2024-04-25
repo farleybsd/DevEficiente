@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Com.DevEficiente.CasaDoCodigo.Domain.ResultObjects;
+using System.ComponentModel.DataAnnotations;
 
 namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
 {
@@ -20,28 +21,24 @@ namespace Com.DevEficiente.CasaDoCodigo.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PaisResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> CriarPais([FromBody] PaisRequest paisRequest)
+        public async Task<Result<PaisResponse>> CriarPais([FromBody] PaisRequest paisRequest)
         {
-            try
+            if (!ModelState.IsValid)
             {
-                if (!ModelState.IsValid)
+                return new Result<PaisResponse>
                 {
-                    return BadRequest();
-                }
-                var paisSaveCommand = paisRequest.RequestToCommand(paisRequest);
-                var command = await _mediator.Send(paisSaveCommand);
-                return Ok(command);
+                    Succeeded = false,
+                    Errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList()
+                };
             }
-            catch (ValidationException ex)
+            var paisSaveCommand = paisRequest.RequestToCommand(paisRequest);
+            var command = await _mediator.Send(paisSaveCommand);
+
+            return new Result<PaisResponse>
             {
-                _logger.LogError($"Erro ao Salvar Um País: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Erro inesperado ao Salvar Um Pais  - {ex.Message}");
-                throw new Exception("Erro inesperado ao Salvar Um Pais");
-            }
+                Succeeded = true,
+                Data = command.Data
+            };
         }
 
         [HttpPost("/CriarEstado")]

@@ -1,6 +1,8 @@
-﻿namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
+﻿using Com.DevEficiente.CasaDoCodigo.Domain.ResultObjects;
+
+namespace Com.DevEficiente.CasaDoCodigo.Aplication.Commands
 {
-    public class PaisSaveCommand : IRequest<PaisResponse>
+    public class PaisSaveCommand : IRequest<Result<PaisResponse>>
     {
         public string NomePais { get; private set; }
 

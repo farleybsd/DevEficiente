@@ -1,6 +1,8 @@
 ﻿using Com.DevEficiente.CasaDoCodigo.Aplication.Result;
 using Com.DevEficiente.CasaDoCodigo.Domain.Builders;
 using Com.DevEficiente.CasaDoCodigo.Domain.Builders.Cupons;
+using Com.DevEficiente.CasaDoCodigo.Domain.NotificationObjects;
+using Com.DevEficiente.CasaDoCodigo.Domain.ResultObjects;
 
 namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
 {
@@ -16,6 +18,7 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddSingleton<IEstadoRepository, EstadoRepository>();
             services.AddSingleton<ICompraRepository, CompraRepository>();
             services.AddSingleton<ICupomRepository, CupomRepository>();
+            
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
@@ -29,10 +32,11 @@ namespace Com.DevEficiente.CasaDoCodigo.InfraStruct.CrossCutting.CrossCutting
             services.AddScoped<IRequestHandler<LivroSaveCommand, LivroResponse>, LivroSaveCommandHandler>();
             services.AddScoped<IRequestHandler<LivroByIdQueryCommand, LivroByIdQueryResult>, LivroByIdQueryHandler>();
             services.AddScoped<IRequestHandler<DetalhesDoLivroSiteCommand, DetalhesDoLivroSiteResponse>, DetalhesDoLivroSiteQueryHandler>();
-            services.AddScoped<IRequestHandler<PaisSaveCommand, PaisResponse>, PaisSaveCommandHandler>();
+            services.AddScoped<IRequestHandler<PaisSaveCommand, Result<PaisResponse>>, PaisSaveCommandHandler>();
             services.AddScoped<IRequestHandler<EstadoSaveCommand, EstadoResponse>, EstadoSaveCommandHandler>();
             services.AddScoped<IRequestHandler<CompraSaveCommand, CompraResult>, CompraSaveCommandHandler>();
             services.AddScoped<IRequestHandler<CupomSaveCommand, CupomResult>, CupomSaveCommandHandler>();
+            services.AddScoped<NotificationContext>();
         }
 
         public static void CasaDoCodigoRegisterBuilder(IServiceCollection services)
