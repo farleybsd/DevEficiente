@@ -1,0 +1,6 @@
+@br.com.deveficiente.mercadolivre.Api_HostAddress = http://localhost:5049
+
+GET {{br.com.deveficiente.mercadolivre.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
