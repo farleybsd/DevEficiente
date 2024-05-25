@@ -3,9 +3,10 @@
     public class HandlerLogin
     {
         private IBuilderLogin BuilderLogin;
+
         public HandlerLogin(IBuilderLogin builderLogin)
         {
-                BuilderLogin = builderLogin;
+            BuilderLogin = builderLogin;
         }
 
         public void builderLogin(string email, string passwordValue, string encryptionKey)

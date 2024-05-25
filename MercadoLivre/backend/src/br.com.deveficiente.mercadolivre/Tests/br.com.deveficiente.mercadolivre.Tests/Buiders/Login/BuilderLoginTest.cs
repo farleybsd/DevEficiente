@@ -43,7 +43,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var exception = Assert.Throws<ArgumentNullException>(() => handlerLogin.builderLogin(email, passwordValue, encryptionKey));
             Assert.Equal("email", exception.ParamName);
             Assert.Equal("O email não pode ser nulo ou vazio. (Parameter 'email')", exception.Message);
-
         }
 
         [Theory]
@@ -56,7 +55,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var builderLogin = new BuilderLogin();
             var handlerLogin = new HandlerLogin(builderLogin);
 
-            
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
 
@@ -64,7 +62,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var exception = Assert.Throws<ArgumentNullException>(() => handlerLogin.builderLogin(email, passwordValue, encryptionKey));
             Assert.Equal("email", exception.ParamName);
             Assert.Equal("O email não pode ser nulo ou vazio. (Parameter 'email')", exception.Message);
-
         }
 
         [Fact]
@@ -74,7 +71,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var builderLogin = new BuilderLogin();
             var handlerLogin = new HandlerLogin(builderLogin);
 
-
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
 
@@ -82,7 +78,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var exception = Assert.Throws<ArgumentNullException>(() => handlerLogin.builderLogin("", passwordValue, encryptionKey));
             Assert.Equal("email", exception.ParamName);
             Assert.Equal("O email não pode ser nulo ou vazio. (Parameter 'email')", exception.Message);
-
         }
 
         [Theory]
@@ -150,7 +145,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             Assert.NotNull(resultado);
         }
 
-
         [Theory]
         [InlineData(null)]
         [InlineData("")]
@@ -168,7 +162,73 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var exception = Assert.Throws<ArgumentNullException>(() => handlerLogin.builderLogin(email, passwordValue, encryptionKey));
             Assert.Equal("passwordValue", exception.ParamName);
             Assert.Equal("O password não pode ser nulo ou vazio. (Parameter 'passwordValue')", exception.Message);
+        }
 
+        [Theory]
+        [InlineData("12")]
+        [InlineData("2")]
+        [InlineData("123")]
+        [InlineData("1234")]
+        [InlineData("12345")]
+        public void ThePasswordMustBeAtLeastSixCharactersLong(string passwordValue)
+        {
+            // Arrange
+            var builderLogin = new BuilderLogin();
+            var handlerLogin = new HandlerLogin(builderLogin);
+
+            var email = "farley.t.i@hotmail.com";
+            var encryptionKey = "ChaveSecreta123";
+
+            // Act & Assert
+            var exception = Assert.Throws<ArgumentNullException>(() => handlerLogin.builderLogin(email, passwordValue, encryptionKey));
+            Assert.Equal("passwordValue", exception.ParamName);
+            Assert.Equal("O password não pode ter menos que 6 digitos. (Parameter 'passwordValue')", exception.Message);
+        }
+
+        [Theory]
+        [InlineData("1234567")]
+        public void PasswordWithMoreThanSixDigits(string passwordValue)
+        {
+            // Arrange
+            var builderLogin = new BuilderLogin();
+            var handlerLogin = new HandlerLogin(builderLogin);
+
+            var email = "farley.t.i@hotmail.com";
+            var encryptionKey = "ChaveSecreta123";
+
+            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+
+            var Login = builderLogin.GetLogin();
+
+            // Act
+            var resultado = Login.Password.EncryptedPassword;
+
+            // Assert
+            Assert.NotNull(resultado);
+        }
+
+        [Theory]
+        [InlineData("1234567")]
+        public void ThePasswordMustBeStoredUsingSomeHashingAlgorithmYourChoice(string passwordValue)
+        {
+            // Arrange
+            var builderLogin = new BuilderLogin();
+            var handlerLogin = new HandlerLogin(builderLogin);
+
+            var email = "farley.t.i@hotmail.com";
+            var encryptionKey = "ChaveSecreta123";
+
+            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+
+            var Login = builderLogin.GetLogin();
+
+            var passwod = new Password(passwordValue, encryptionKey);
+
+            // Act
+            var resultado = Login.Password.EncryptedPassword;
+
+            // Assert
+            Assert.Equal(resultado, passwod.EncryptedPassword);
         }
     }
 }
