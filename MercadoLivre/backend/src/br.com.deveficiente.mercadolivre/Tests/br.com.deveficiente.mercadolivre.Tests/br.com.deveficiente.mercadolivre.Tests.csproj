@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\br.com.deveficiente.mercadolivre.Application\br.com.deveficiente.mercadolivre.Application.csproj" />
     <ProjectReference Include="..\..\Domain\br.com.deveficiente.mercadolivre.Domain\br.com.deveficiente.mercadolivre.Domain.csproj" />
   </ItemGroup>
 
