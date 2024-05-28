@@ -17,10 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Application\br.com.deveficiente.mercadolivre.Application\br.com.deveficiente.mercadolivre.Application.csproj" />
     <ProjectReference Include="..\..\Infra\br.com.deveficiente.mercadolivre.Infra\br.com.deveficiente.mercadolivre.Infra.csproj" />
   </ItemGroup>

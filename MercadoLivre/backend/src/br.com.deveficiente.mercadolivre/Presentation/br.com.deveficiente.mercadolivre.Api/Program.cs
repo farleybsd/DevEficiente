@@ -1,4 +1,5 @@
 using br.com.deveficiente.mercadolivre.Application.Filters;
+using br.com.deveficiente.mercadolivre.Infra.CrossCutting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,10 @@ builder.Services.AddControllers(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+NativeInjectorBootStrapper.mercadolivreRegisterSqslDBServices(builder.Services, builder.Configuration);
+NativeInjectorBootStrapper.CasaDoCodigoRegisterMediatR(builder.Services);
+NativeInjectorBootStrapper.mercadolivreRegisterBuilder(builder.Services);
 
 var app = builder.Build();
 

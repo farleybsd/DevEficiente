@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\br.com.deveficiente.mercadolivre.Application\br.com.deveficiente.mercadolivre.Application.csproj" />
     <ProjectReference Include="..\..\Domain\br.com.deveficiente.mercadolivre.Domain\br.com.deveficiente.mercadolivre.Domain.csproj" />
   </ItemGroup>
 
