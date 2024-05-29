@@ -5,13 +5,18 @@ namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
 {
     public class BuilderLogin : IBuilderLogin
     {
-        private Login _Login = new Login();
+       private Login _Login = new Login();
 
-        public void BuilderEmail(string email)
+        public Login BuilderLoginAndPassword(string email, string passwordValue, string encryptionKey)
         {
             EmailNotNull(email);
             Email loginEmail = new Email(email);
-            _Login.setEmail(loginEmail);
+            PasswordNotNull(passwordValue);
+            PasswordAtleastSixCharacters(passwordValue);
+
+            Password loginPassword = new Password(passwordValue, encryptionKey);
+            var login = new Login(loginEmail, loginPassword);
+            return login;
         }
 
         private void EmailNotNull(string email)
@@ -19,16 +24,6 @@ namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
             if (string.IsNullOrWhiteSpace(email))
                 throw new ArgumentNullException(nameof(email), "O email não pode ser nulo ou vazio.");
         }
-
-        public void BuilderPassword(string passwordValue, string encryptionKey)
-        {
-            PasswordNotNull(passwordValue);
-            PasswordAtleastSixCharacters(passwordValue);
-
-            Password loginPassword = new Password(passwordValue, encryptionKey);
-            _Login.setPassword(loginPassword);
-        }
-
         private void PasswordAtleastSixCharacters(string passwordValue)
         {
             if (passwordValue.Length < 6)
@@ -41,9 +36,6 @@ namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
                 throw new ArgumentNullException(nameof(passwordValue), "O password não pode ser nulo ou vazio.");
         }
 
-        public Login GetLogin()
-        {
-            return _Login;
-        }
+        
     }
 }

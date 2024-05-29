@@ -8,18 +8,34 @@ namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
             @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-        private string _email;
-        public string Address => _email;
+        private string _address;
 
-        public Email(string email)
+        public string Address => _address;
+
+        public Email(string address)
         {
-            if (!IsValidEmail(email))
+            if (!IsValidEmail(address))
             {
-                throw new ArgumentException("Invalid email format", nameof(email));
+                throw new ArgumentException("Invalid email format", nameof(address));
             }
-
-            _email = email;
+            _address = address;
         }
+
+
+
+        //public Email(string email)
+        //{
+        //    if (!IsValidEmail(email))
+        //    {
+        //        throw new ArgumentException("Invalid email format", nameof(email));
+        //    }
+
+        //    _email = email;
+        //}
+
+        // Necessário para o EF Core poder instanciar a entidade
+        private Email() { }
+
 
         private static bool IsValidEmail(string email)
         {

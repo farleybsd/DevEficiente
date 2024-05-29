@@ -9,8 +9,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["br.com.deveficiente.mercadolivre/Presentation/br.com.deveficiente.mercadolivre.Api/br.com.deveficiente.mercadolivre.Api.csproj", "src/br.com.deveficiente.mercadolivre/Presentation/br.com.deveficiente.mercadolivre.Api/"]
-RUN dotnet restore "br.com.deveficiente.mercadolivre.Api/br.com.deveficiente.mercadolivre.Api.csproj"
+COPY ["src/br.com.deveficiente.mercadolivre/Presentation/br.com.deveficiente.mercadolivre.Api/br.com.deveficiente.mercadolivre.Api.csproj", "src/br.com.deveficiente.mercadolivre/Presentation/br.com.deveficiente.mercadolivre.Api/"]
 COPY . .
 WORKDIR "/src/br.com.deveficiente.mercadolivre/Presentation/br.com.deveficiente.mercadolivre.Api"
 RUN dotnet build "./br.com.deveficiente.mercadolivre.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build

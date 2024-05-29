@@ -1,5 +1,6 @@
 using br.com.deveficiente.mercadolivre.Application.Filters;
 using br.com.deveficiente.mercadolivre.Infra.CrossCutting;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +13,10 @@ builder.Services.AddControllers(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-NativeInjectorBootStrapper.mercadolivreRegisterSqslDBServices(builder.Services, builder.Configuration);
+// Add MediatR with the assembly containing your request handlers
+builder.Services.AddMediatR(typeof(Program).Assembly);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+NativeInjectorBootStrapper.mercadolivreRegisterSqslDBServices(builder.Services, connectionString);
 NativeInjectorBootStrapper.CasaDoCodigoRegisterMediatR(builder.Services);
 NativeInjectorBootStrapper.mercadolivreRegisterBuilder(builder.Services);
 

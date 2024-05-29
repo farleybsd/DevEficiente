@@ -8,19 +8,15 @@ namespace br.com.deveficiente.mercadolivre.Domain.Entity
         public Email Email { get; private set; }
         public Password Password { get; set; }
 
-        public Login()
-        {
-            Instant = new Instant();
-        }
-
-        public void setEmail(Email email)
+        public Login(Email email, Password password)
         {
             Email = email;
-        }
-
-        public void setPassword(Password password)
-        {
             Password = password;
+            Instant = new Instant();
+        }
+        public Login()
+        {
+            
         }
     }
 }

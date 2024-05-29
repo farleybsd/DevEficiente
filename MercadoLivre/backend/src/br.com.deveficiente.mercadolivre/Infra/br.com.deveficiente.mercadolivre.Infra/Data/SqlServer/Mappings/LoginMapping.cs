@@ -11,25 +11,21 @@ namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Mappings
             builder.ToTable("Login");
 
             builder.HasKey(x => x.Id);
-            builder.Property(c => c.Id).ValueGeneratedOnAdd();
 
-            // Mapeamento para Instant
-            builder.OwnsOne(l => l.Instant, i =>
-            {
-                i.Property(p => p.CreationDate).HasColumnName("Instant").IsRequired();
-            });
+            builder.OwnsOne(x => x.Email)
+                .Property(x => x.Address)
+                .HasColumnName("Email")
+                .IsRequired(true);
 
-            // Mapeamento para Email
-            builder.OwnsOne(l => l.Email, e =>
-            {
-                e.Property(p => p.Address).HasColumnName("Email").IsRequired();
-            });
+            builder.OwnsOne(x => x.Instant)
+               .Property(x => x.CreationDate)
+               .HasColumnName("Instant")
+               .IsRequired(true);
 
-            // Mapeamento para Password
-            builder.OwnsOne(l => l.Password, p =>
-            {
-                p.Property(pp => pp.EncryptedPassword).HasColumnName("Password").IsRequired();
-            });
+            builder.OwnsOne(x => x.Password)
+               .Property(x => x.EncryptedPassword)
+               .HasColumnName("Password")
+               .IsRequired(true);
         }
     }
 }

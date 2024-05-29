@@ -23,9 +23,9 @@ namespace br.com.deveficiente.mercadolivre.Infra.CrossCutting
             services.AddScoped<IBuilderLogin, BuilderLogin>();
         }
 
-        public static void mercadolivreRegisterSqslDBServices(IServiceCollection services, IConfiguration configuracao)
+        public static void mercadolivreRegisterSqslDBServices(IServiceCollection services, string conexao)
         {
-            services.AddDbContext<ApplicationContext>(p => p.UseSqlServer(configuracao.GetConnectionString("ConnectionStrings")));
+            services.AddDbContext<ApplicationContext>(p => p.UseSqlServer(conexao));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ILoginRepository, LoginRepository>();
 

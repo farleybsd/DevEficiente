@@ -36,7 +36,7 @@ namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
                     }
                 };
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 NotificationContext.AddNotification("Erro ao Salvar um Login", "Erro Inesperado");
                 return new Result<UserCreateResponse>()

@@ -20,6 +20,9 @@ namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
             EncryptedPassword = Encrypt(passwordValue);
         }
 
+        // Necessário para o EF Core poder instanciar a entidade
+        private Password() { }
+
         // Método para criptografar a senha
         private string Encrypt(string plainText)
         {

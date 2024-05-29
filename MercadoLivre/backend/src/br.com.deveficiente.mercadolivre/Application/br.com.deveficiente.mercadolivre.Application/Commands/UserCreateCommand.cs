@@ -22,8 +22,8 @@ namespace br.com.deveficiente.mercadolivre.Application.Commands
             var builderLogin = new BuilderLogin();
             var handlerLogin = new HandlerLogin(builderLogin);
             var encryptionKey = "ChaveSecreta123";
-            handlerLogin.builderLogin(userCreateCommand.Email, userCreateCommand.Password, encryptionKey);
-            var Login = builderLogin.GetLogin();
+           
+            var Login = handlerLogin.builderLogin(userCreateCommand.Email, userCreateCommand.Password, encryptionKey);
             return Login;
         }
     }

@@ -23,7 +23,7 @@ namespace br.com.deveficiente.mercadolivre.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(UserCreateResponse))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<Result<UserCreateResponse>> CriarPais([FromBody] UserCreateRequest userCreateRequest)
+        public async Task<Result<UserCreateResponse>> CreateUser([FromBody] UserCreateRequest userCreateRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -33,8 +33,8 @@ namespace br.com.deveficiente.mercadolivre.Api.Controllers
                     Errors = ModelState.Values.SelectMany(v => v.Errors.Select(e => e.ErrorMessage)).ToList()
                 };
             }
-            var paisSaveCommand = userCreateRequest.RequestToCommand(userCreateRequest);
-            var command = await _mediator.Send(paisSaveCommand);
+            var userSaveCommand = userCreateRequest.RequestToCommand(userCreateRequest);
+            var command = await _mediator.Send(userSaveCommand);
 
             return new Result<UserCreateResponse>
             {

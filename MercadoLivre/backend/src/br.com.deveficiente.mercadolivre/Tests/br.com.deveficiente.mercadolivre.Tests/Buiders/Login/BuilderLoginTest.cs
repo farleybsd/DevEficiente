@@ -17,9 +17,9 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
 
-            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+           
 
-            var Login = builderLogin.GetLogin();
+            var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
             // Act
             var resultado = Login.Instant.CreationDate;
@@ -134,9 +134,9 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
 
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
-            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+           
 
-            var LoginEmail = builderLogin.GetLogin();
+            var LoginEmail = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
             // Act
             var resultado = LoginEmail.Email.Address;
@@ -196,9 +196,9 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var email = "farley.t.i@hotmail.com";
             var encryptionKey = "ChaveSecreta123";
 
-            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+            
 
-            var Login = builderLogin.GetLogin();
+            var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
             // Act
             var resultado = Login.Password.EncryptedPassword;
@@ -218,9 +218,9 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var email = "farley.t.i@hotmail.com";
             var encryptionKey = "ChaveSecreta123";
 
-            handlerLogin.builderLogin(email, passwordValue, encryptionKey);
+           
 
-            var Login = builderLogin.GetLogin();
+            var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
             var passwod = new Password(passwordValue, encryptionKey);
 
