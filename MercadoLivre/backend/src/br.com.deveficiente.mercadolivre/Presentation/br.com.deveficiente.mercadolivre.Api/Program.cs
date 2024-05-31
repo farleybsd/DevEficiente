@@ -1,7 +1,3 @@
-using br.com.deveficiente.mercadolivre.Application.Filters;
-using br.com.deveficiente.mercadolivre.Infra.CrossCutting;
-using MediatR;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

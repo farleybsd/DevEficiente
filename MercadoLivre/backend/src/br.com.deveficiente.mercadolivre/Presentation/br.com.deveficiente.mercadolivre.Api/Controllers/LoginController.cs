@@ -1,10 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.Request;
-using br.com.deveficiente.mercadolivre.Application.Response;
-using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
-namespace br.com.deveficiente.mercadolivre.Api.Controllers
+﻿namespace br.com.deveficiente.mercadolivre.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
