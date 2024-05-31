@@ -1,5 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.Commands;
-using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Application.Request
 {

@@ -1,0 +1,13 @@
+﻿global using br.com.deveficiente.mercadolivre.Application.Commands;
+global using br.com.deveficiente.mercadolivre.Application.Response;
+global using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
+global using br.com.deveficiente.mercadolivre.Domain.Entity;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
+global using br.com.deveficiente.mercadolivre.Domain.NotificationObjects;
+global using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
+global using MediatR;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Newtonsoft.Json;
+global using System.ComponentModel.DataAnnotations;
+global using System.Net;

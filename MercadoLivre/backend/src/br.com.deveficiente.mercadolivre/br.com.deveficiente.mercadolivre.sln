@@ -13,17 +13,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2A6F0E9A-5D35-4752-BFF8-B394434DBFA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Application", "Application\br.com.deveficiente.mercadolivre.Application\br.com.deveficiente.mercadolivre.Application.csproj", "{A67744DB-2A31-4053-8B68-59B42BAD47E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Application", "Application\br.com.deveficiente.mercadolivre.Application\br.com.deveficiente.mercadolivre.Application.csproj", "{A67744DB-2A31-4053-8B68-59B42BAD47E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Domain", "Domain\br.com.deveficiente.mercadolivre.Domain\br.com.deveficiente.mercadolivre.Domain.csproj", "{26ACA7D5-31AA-4B3E-9C0B-A0F0158D100B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Domain", "Domain\br.com.deveficiente.mercadolivre.Domain\br.com.deveficiente.mercadolivre.Domain.csproj", "{26ACA7D5-31AA-4B3E-9C0B-A0F0158D100B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Infra", "Infra\br.com.deveficiente.mercadolivre.Infra\br.com.deveficiente.mercadolivre.Infra.csproj", "{77428591-37AF-4D4B-90F3-304A4891EDC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Infra", "Infra\br.com.deveficiente.mercadolivre.Infra\br.com.deveficiente.mercadolivre.Infra.csproj", "{77428591-37AF-4D4B-90F3-304A4891EDC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Api", "Presentation\br.com.deveficiente.mercadolivre.Api\br.com.deveficiente.mercadolivre.Api.csproj", "{3FAAB86B-6A09-4D7C-B78A-2C63B6D46918}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Api", "Presentation\br.com.deveficiente.mercadolivre.Api\br.com.deveficiente.mercadolivre.Api.csproj", "{3FAAB86B-6A09-4D7C-B78A-2C63B6D46918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Tests", "Tests\br.com.deveficiente.mercadolivre.Tests\br.com.deveficiente.mercadolivre.Tests.csproj", "{71A4E23F-01F2-4118-B886-DF27A515E32B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Tests", "Tests\br.com.deveficiente.mercadolivre.Tests\br.com.deveficiente.mercadolivre.Tests.csproj", "{71A4E23F-01F2-4118-B886-DF27A515E32B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "br.com.deveficiente.mercadolivre.Integration.Tests", "Tests\br.com.deveficiente.mercadolivre.Integration.Tests\br.com.deveficiente.mercadolivre.Integration.Tests.csproj", "{8EB9A435-9820-4B59-8859-93D24100A928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "br.com.deveficiente.mercadolivre.Integration.Tests", "Tests\br.com.deveficiente.mercadolivre.Integration.Tests\br.com.deveficiente.mercadolivre.Integration.Tests.csproj", "{8EB9A435-9820-4B59-8859-93D24100A928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

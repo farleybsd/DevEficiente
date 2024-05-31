@@ -1,10 +1,5 @@
 ﻿
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Filters;
-using System.Net;
-using Newtonsoft.Json;
-using br.com.deveficiente.mercadolivre.Domain.NotificationObjects;
-using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
+
 
 namespace br.com.deveficiente.mercadolivre.Application.Filters
 {

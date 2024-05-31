@@ -1,9 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.Response;
-using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
-using br.com.deveficiente.mercadolivre.Domain.Entity;
-using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
-using br.com.deveficiente.mercadolivre.Domain.ValueObjects;
-using MediatR;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Application.Commands
 {
