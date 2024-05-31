@@ -1,0 +1,12 @@
+﻿global using br.com.deveficiente.mercadolivre.Domain.Entity;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
+global using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Base;
+global using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context;
+global using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Mappings;
+global using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Repositorys;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.EntityFrameworkCore.Query;
+global using Microsoft.EntityFrameworkCore.Storage;
+global using System.Linq.Expressions;

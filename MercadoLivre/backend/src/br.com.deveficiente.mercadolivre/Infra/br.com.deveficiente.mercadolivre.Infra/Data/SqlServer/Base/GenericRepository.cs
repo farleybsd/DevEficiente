@@ -1,10 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using System.Linq.Expressions;
-
-namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Base
+﻿namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Base
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

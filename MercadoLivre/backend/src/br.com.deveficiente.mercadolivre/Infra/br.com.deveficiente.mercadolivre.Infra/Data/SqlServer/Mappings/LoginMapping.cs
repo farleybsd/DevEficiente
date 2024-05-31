@@ -1,8 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Entity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Mappings
+﻿namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Mappings
 {
     public class LoginMapping : IEntityTypeConfiguration<Login>
     {

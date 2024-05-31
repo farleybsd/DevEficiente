@@ -1,10 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
-using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Repositorys;
-using Microsoft.EntityFrameworkCore.Storage;
-
-namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.UnitOfWork
+﻿namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {

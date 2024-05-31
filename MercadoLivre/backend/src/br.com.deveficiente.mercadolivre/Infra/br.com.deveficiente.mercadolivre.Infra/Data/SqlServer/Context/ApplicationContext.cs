@@ -1,8 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Entity;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Mappings;
-using Microsoft.EntityFrameworkCore;
-
-namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context
+﻿namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context
 {
     public class ApplicationContext : DbContext
     {
