@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
+﻿namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
 {
     public class Email
     {
@@ -21,8 +19,6 @@ namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
             _address = address;
         }
 
-
-
         //public Email(string email)
         //{
         //    if (!IsValidEmail(email))
@@ -34,8 +30,8 @@ namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
         //}
 
         // Necessário para o EF Core poder instanciar a entidade
-        private Email() { }
-
+        private Email()
+        { }
 
         private static bool IsValidEmail(string email)
         {

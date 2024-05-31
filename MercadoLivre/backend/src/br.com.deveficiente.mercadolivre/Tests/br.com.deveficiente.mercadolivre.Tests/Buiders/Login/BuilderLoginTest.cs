@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
+﻿namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
 {
     public class BuilderLoginTest
     {
@@ -14,8 +12,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var email = "farley.t.i@hotmail.com";
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
-
-           
 
             var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
@@ -132,7 +128,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
 
             var passwordValue = "MinhaSenha123";
             var encryptionKey = "ChaveSecreta123";
-           
 
             var LoginEmail = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
@@ -194,8 +189,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
             var email = "farley.t.i@hotmail.com";
             var encryptionKey = "ChaveSecreta123";
 
-            
-
             var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 
             // Act
@@ -215,8 +208,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
 
             var email = "farley.t.i@hotmail.com";
             var encryptionKey = "ChaveSecreta123";
-
-           
 
             var Login = handlerLogin.builderLogin(email, passwordValue, encryptionKey);
 

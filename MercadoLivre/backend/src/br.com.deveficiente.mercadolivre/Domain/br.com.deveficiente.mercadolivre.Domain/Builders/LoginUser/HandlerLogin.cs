@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
+﻿namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
 {
     public class HandlerLogin
     {
@@ -13,8 +11,7 @@ namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
 
         public Login builderLogin(string email, string passwordValue, string encryptionKey)
         {
-            
-            return BuilderLogin.BuilderLoginAndPassword(email,passwordValue, encryptionKey);
+            return BuilderLogin.BuilderLoginAndPassword(email, passwordValue, encryptionKey);
         }
     }
 }

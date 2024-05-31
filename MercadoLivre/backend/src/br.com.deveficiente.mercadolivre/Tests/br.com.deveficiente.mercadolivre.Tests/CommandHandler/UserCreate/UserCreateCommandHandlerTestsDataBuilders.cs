@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
+﻿namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
 {
     public class UserCreateCommandHandlerTestsDataBuilders
     {
@@ -13,7 +11,7 @@ namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
             PassWord = "password123";
         }
 
-        public UserCreateCommandHandlerTestsDataBuilders WithEmail (string email)
+        public UserCreateCommandHandlerTestsDataBuilders WithEmail(string email)
         {
             Email = email;
             return this;

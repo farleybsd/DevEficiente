@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
+﻿namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
 {
     public class UserCreateRequestTests
     {
@@ -45,7 +43,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
                 .WithPassword("123456")
                 .Build();
 
-
             // Validação
             var validationResults = new List<ValidationResult>();
             var validationContext = new ValidationContext(userRequest, null, null);
@@ -53,7 +50,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
 
             Assert.False(isValid);
             Assert.Contains(validationResults, v => v.ErrorMessage.Contains("Por favor, insira um endereço de e-mail válido."));
-
         }
 
         [Fact]
@@ -79,7 +75,7 @@ namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
         {
             // Criar UserCreateRequest sem e-mail
             var userRequest = new UserCreateTestDataBuilders()
-                .WithEmail(string.Empty) 
+                .WithEmail(string.Empty)
                 .WithPassword("123456")
                 .Build();
 

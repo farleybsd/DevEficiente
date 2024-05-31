@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
+﻿namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
 {
     public class Instant
     {

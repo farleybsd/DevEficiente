@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Application.Request
+﻿namespace br.com.deveficiente.mercadolivre.Application.Request
 {
     public class UserCreateRequest
     {

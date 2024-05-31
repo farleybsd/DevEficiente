@@ -6,6 +6,7 @@
     {
         private readonly IMediator _mediator;
         private readonly ILogger<LoginController> _logger;
+
         public LoginController(IMediator mediator,
                                ILogger<LoginController> logger)
         {

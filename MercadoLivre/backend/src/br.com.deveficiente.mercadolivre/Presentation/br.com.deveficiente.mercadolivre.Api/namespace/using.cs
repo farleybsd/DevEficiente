@@ -5,4 +5,3 @@ global using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
 global using br.com.deveficiente.mercadolivre.Infra.CrossCutting;
 global using MediatR;
 global using Microsoft.AspNetCore.Mvc;
-

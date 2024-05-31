@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.Entity
+﻿namespace br.com.deveficiente.mercadolivre.Domain.Entity
 {
     public class Login : EntidadeBase
     {
@@ -14,9 +12,9 @@ namespace br.com.deveficiente.mercadolivre.Domain.Entity
             Password = password;
             Instant = new Instant();
         }
+
         public Login()
         {
-            
         }
     }
 }

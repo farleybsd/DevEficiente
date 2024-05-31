@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
+﻿namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
 {
     public class UserCreateTestDataBuilders
     {

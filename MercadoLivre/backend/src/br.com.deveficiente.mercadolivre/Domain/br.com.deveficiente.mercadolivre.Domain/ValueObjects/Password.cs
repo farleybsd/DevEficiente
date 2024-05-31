@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
+﻿namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
 {
     public class Password
     {
@@ -20,7 +18,8 @@ namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
         }
 
         // Necessário para o EF Core poder instanciar a entidade
-        private Password() { }
+        private Password()
+        { }
 
         // Método para criptografar a senha
         private string Encrypt(string plainText)

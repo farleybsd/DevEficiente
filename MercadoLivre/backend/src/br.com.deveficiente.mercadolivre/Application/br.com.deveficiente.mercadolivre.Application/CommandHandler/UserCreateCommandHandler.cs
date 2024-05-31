@@ -1,17 +1,17 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
+﻿namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
 {
     public class UserCreateCommandHandler : IRequestHandler<UserCreateCommand, Result<UserCreateResponse>>
     {
         private readonly IUnitOfWork Uow;
         private readonly NotificationContext NotificationContext;
-        public UserCreateCommandHandler( IUnitOfWork uow,
+
+        public UserCreateCommandHandler(IUnitOfWork uow,
                                         NotificationContext notificationContext)
         {
             Uow = uow;
             NotificationContext = notificationContext;
         }
+
         public async Task<Result<UserCreateResponse>> Handle(UserCreateCommand request, CancellationToken cancellationToken)
         {
             try
@@ -43,8 +43,6 @@ namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
                 Uow.Rollback();
                 throw;
             }
-            
-
         }
     }
 }

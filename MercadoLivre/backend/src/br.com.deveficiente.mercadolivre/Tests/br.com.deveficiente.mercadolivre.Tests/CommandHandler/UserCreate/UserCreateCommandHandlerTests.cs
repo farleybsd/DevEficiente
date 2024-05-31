@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
+﻿namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
 {
     public class UserCreateCommandHandlerTests
     {
@@ -10,12 +8,12 @@ namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
             // Arrange
             var unitOffWorkMock = new Mock<IUnitOfWork>();
             var loginRepositoryMock = new Mock<ILoginRepository>();
-            unitOffWorkMock.Setup( uow => uow.LoginRepository).Returns(loginRepositoryMock.Object);
+            unitOffWorkMock.Setup(uow => uow.LoginRepository).Returns(loginRepositoryMock.Object);
 
             var notificationContext = new NotificationContext();
-            var handler = new UserCreateCommandHandler(unitOffWorkMock.Object,notificationContext);
+            var handler = new UserCreateCommandHandler(unitOffWorkMock.Object, notificationContext);
 
-            var command = new  UserCreateCommandHandlerTestsDataBuilders()
+            var command = new UserCreateCommandHandlerTestsDataBuilders()
                  .WithEmail("test@example.com")
                   .WithPassword("password123")
                   .Build();
@@ -28,7 +26,6 @@ namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
             Assert.NotNull(result.Data);
             Assert.Equal("test@example.com", result.Data.Email);
             Assert.Equal("password123", result.Data.Password);
-
         }
 
         [Fact]
@@ -60,4 +57,3 @@ namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
         }
     }
 }
-

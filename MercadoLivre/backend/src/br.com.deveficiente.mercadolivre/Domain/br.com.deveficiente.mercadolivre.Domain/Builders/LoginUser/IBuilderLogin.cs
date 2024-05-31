@@ -1,6 +1,4 @@
-﻿
-
-namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
+﻿namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
 {
     public interface IBuilderLogin
     {

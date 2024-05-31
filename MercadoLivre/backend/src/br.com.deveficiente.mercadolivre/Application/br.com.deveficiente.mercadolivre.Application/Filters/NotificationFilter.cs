@@ -1,7 +1,4 @@
-﻿
-
-
-namespace br.com.deveficiente.mercadolivre.Application.Filters
+﻿namespace br.com.deveficiente.mercadolivre.Application.Filters
 {
     public class NotificationFilter : IAsyncResultFilter
     {

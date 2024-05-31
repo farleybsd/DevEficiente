@@ -12,7 +12,6 @@
             services.AddDbContext<ApplicationContext>(p => p.UseSqlServer(conexao));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ILoginRepository, LoginRepository>();
-
         }
 
         public static void CasaDoCodigoRegisterMediatR(IServiceCollection services)
