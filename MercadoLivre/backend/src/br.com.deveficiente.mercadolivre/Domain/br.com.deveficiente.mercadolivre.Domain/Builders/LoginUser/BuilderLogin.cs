@@ -1,5 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Entity;
-using br.com.deveficiente.mercadolivre.Domain.ValueObjects;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser
 {

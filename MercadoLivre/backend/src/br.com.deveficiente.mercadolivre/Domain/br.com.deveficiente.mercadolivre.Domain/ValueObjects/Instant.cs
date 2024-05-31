@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
 {

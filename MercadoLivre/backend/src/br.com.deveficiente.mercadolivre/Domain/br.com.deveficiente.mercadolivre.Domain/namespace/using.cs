@@ -1,0 +1,9 @@
+﻿global using br.com.deveficiente.mercadolivre.Domain.Entity;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
+global using br.com.deveficiente.mercadolivre.Domain.ValueObjects;
+global using Microsoft.EntityFrameworkCore.Query;
+global using System.Globalization;
+global using System.Linq.Expressions;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Text.RegularExpressions;

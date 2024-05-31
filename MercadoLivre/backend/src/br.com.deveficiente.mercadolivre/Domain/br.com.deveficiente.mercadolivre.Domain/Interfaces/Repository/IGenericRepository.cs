@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Query;
-using System.Linq.Expressions;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository
 {

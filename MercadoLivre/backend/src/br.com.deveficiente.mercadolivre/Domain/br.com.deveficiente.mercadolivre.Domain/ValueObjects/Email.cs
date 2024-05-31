@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Domain.ValueObjects
 {
