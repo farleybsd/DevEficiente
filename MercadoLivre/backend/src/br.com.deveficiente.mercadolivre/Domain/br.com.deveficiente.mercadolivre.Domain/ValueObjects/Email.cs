@@ -18,17 +18,6 @@
             }
             _address = address;
         }
-
-        //public Email(string email)
-        //{
-        //    if (!IsValidEmail(email))
-        //    {
-        //        throw new ArgumentException("Invalid email format", nameof(email));
-        //    }
-
-        //    _email = email;
-        //}
-
         // Necessário para o EF Core poder instanciar a entidade
         private Email()
         { }
