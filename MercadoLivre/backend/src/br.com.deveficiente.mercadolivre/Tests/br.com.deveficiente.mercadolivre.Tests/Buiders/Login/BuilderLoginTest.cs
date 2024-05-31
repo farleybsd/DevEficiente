@@ -1,6 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
-using br.com.deveficiente.mercadolivre.Domain.ValueObjects;
-using System.Globalization;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Tests.Buiders.Login
 {

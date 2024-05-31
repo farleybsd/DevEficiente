@@ -1,4 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.Request;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
 {

@@ -1,5 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
-using System.ComponentModel.DataAnnotations;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Tests.Requets.User
 {

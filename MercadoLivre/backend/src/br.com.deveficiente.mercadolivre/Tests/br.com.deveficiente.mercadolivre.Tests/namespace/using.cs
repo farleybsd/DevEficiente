@@ -1,0 +1,11 @@
+﻿global using br.com.deveficiente.mercadolivre.Application.CommandHandler;
+global using br.com.deveficiente.mercadolivre.Application.Commands;
+global using br.com.deveficiente.mercadolivre.Application.Request;
+global using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
+global using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
+global using br.com.deveficiente.mercadolivre.Domain.NotificationObjects;
+global using br.com.deveficiente.mercadolivre.Domain.ValueObjects;
+global using Moq;
+global using System.ComponentModel.DataAnnotations;
+global using System.Globalization;

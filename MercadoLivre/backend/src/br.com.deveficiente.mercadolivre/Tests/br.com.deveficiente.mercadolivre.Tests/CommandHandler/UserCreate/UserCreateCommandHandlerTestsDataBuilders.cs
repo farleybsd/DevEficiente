@@ -1,4 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.Commands;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
 {

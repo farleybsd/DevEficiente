@@ -1,8 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.CommandHandler;
-using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
-using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
-using br.com.deveficiente.mercadolivre.Domain.NotificationObjects;
-using Moq;
+﻿
 
 namespace br.com.deveficiente.mercadolivre.Tests.CommandHandler.UserCreate
 {
