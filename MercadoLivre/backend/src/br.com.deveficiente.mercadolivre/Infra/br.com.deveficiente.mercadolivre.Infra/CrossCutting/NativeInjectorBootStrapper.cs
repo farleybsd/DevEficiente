@@ -1,20 +1,4 @@
-﻿using br.com.deveficiente.mercadolivre.Application.CommandHandler;
-using br.com.deveficiente.mercadolivre.Application.Commands;
-using br.com.deveficiente.mercadolivre.Application.Response;
-using br.com.deveficiente.mercadolivre.Domain.Builders.LoginUser;
-using br.com.deveficiente.mercadolivre.Domain.Interfaces.Repository;
-using br.com.deveficiente.mercadolivre.Domain.Interfaces.UnitOfWork;
-using br.com.deveficiente.mercadolivre.Domain.NotificationObjects;
-using br.com.deveficiente.mercadolivre.Domain.ResultObjects;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Context;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Repositorys;
-using br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.UnitOfWork;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace br.com.deveficiente.mercadolivre.Infra.CrossCutting
+﻿namespace br.com.deveficiente.mercadolivre.Infra.CrossCutting
 {
     public class NativeInjectorBootStrapper
     {
