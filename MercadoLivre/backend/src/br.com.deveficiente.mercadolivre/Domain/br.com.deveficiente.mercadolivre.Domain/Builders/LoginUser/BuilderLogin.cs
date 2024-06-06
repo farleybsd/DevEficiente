@@ -7,12 +7,11 @@
         public Login BuilderLoginAndPassword(string email, string passwordValue, string encryptionKey)
         {
             EmailNotNull(email);
-            Email loginEmail = new Email(email);
             PasswordNotNull(passwordValue);
             PasswordAtleastSixCharacters(passwordValue);
-
-            Password loginPassword = new Password(passwordValue, encryptionKey);
-            var login = new Login(loginEmail, loginPassword);
+            var login = new Login();
+            login.setEmail(email);
+            login.setPassword(passwordValue, encryptionKey);
             return login;
         }
 
