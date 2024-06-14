@@ -1,4 +1,7 @@
-﻿namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Base
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+
+namespace br.com.deveficiente.mercadolivre.Infra.Data.SqlServer.Base
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -55,6 +58,10 @@
             return await query.ToListAsync();
         }
 
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _dbSet.ToListAsync();
+        }
         public void Remove(T entity)
         {
             _dbSet.Remove(entity);

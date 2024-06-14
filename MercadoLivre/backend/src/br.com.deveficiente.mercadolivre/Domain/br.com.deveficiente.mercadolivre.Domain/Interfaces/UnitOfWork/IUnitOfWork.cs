@@ -9,5 +9,6 @@
         void Rollback();
 
         ILoginRepository LoginRepository { get; }
+        ICategoryRepository CategoryRepository { get; }
     }
 }

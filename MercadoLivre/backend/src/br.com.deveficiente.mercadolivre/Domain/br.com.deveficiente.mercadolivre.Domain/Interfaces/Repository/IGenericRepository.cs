@@ -19,5 +19,7 @@
             Func<IQueryable<T>, IIncludableQueryable<T, object>> include = null,
             int? skip = null,
             int? take = null);
+
+         Task<List<T>> GetAllAsync();
     }
 }
