@@ -8,9 +8,16 @@
 
         private ILoginRepository _loginRepository;
 
+        private ICategoryRepository _categoryRepository;
+
         public ILoginRepository LoginRepository
         {
             get => _loginRepository ?? (_loginRepository = new LoginRepository(_context));
+        }
+
+        public ICategoryRepository CategoryRepository
+        {
+            get => _categoryRepository ?? (_categoryRepository = new CategoryRepository(_context));
         }
 
         public UnitOfWork(ApplicationContext context)

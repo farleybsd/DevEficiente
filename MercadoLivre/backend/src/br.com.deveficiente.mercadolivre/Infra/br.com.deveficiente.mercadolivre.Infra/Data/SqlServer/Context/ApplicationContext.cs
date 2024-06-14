@@ -3,6 +3,7 @@
     public class ApplicationContext : DbContext
     {
         public DbSet<Login> Login { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
