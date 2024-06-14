@@ -12,4 +12,7 @@ BEGIN
     Email NVARCHAR(255) NOT NULL,
     Password NVARCHAR(255) NOT NULL
 );
+
+-- Adicione a restrição de unicidade na coluna Email
+CREATE UNIQUE INDEX UX_Login_Email ON Login (Email);
 END

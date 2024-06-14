@@ -8,10 +8,15 @@
 
             builder.HasKey(x => x.Id);
 
-            builder.OwnsOne(x => x.Email)
-                .Property(x => x.Address)
-                .HasColumnName("Email")
-                .IsRequired(true);
+            builder.OwnsOne(x => x.Email, a =>
+            {
+                a.Property(e => e.Address)
+                    .HasColumnName("Email")
+                    .IsRequired(true);
+
+                // Adicionando o índice único para o campo Email
+                a.HasIndex(e => e.Address).IsUnique();
+            });
 
             builder.OwnsOne(x => x.Instant)
                .Property(x => x.CreationDate)
