@@ -10,5 +10,7 @@
 
         ILoginRepository LoginRepository { get; }
         ICategoryRepository CategoryRepository { get; }
+
+        ISubCategoryRepository SubCategoryRepository { get; }
     }
 }

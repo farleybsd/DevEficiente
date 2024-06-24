@@ -4,7 +4,7 @@
     {
         public static void mercadolivreRegisterBuilder(IServiceCollection services)
         {
-            services.AddScoped<IBuilderLogin, BuilderLogin>();
+            services.AddScoped<IBuilderCategory, BuilderCategory>();
         }
 
         public static void mercadolivreRegisterSqslDBServices(IServiceCollection services, string conexao)
@@ -19,6 +19,7 @@
         {
             services.AddScoped<NotificationContext>();
             services.AddScoped<IRequestHandler<UserCreateCommand, Result<UserCreateResponse>>, UserCreateCommandHandler>();
+            services.AddScoped<IRequestHandler<CategoryCreateCommand, Result<CategoryCreateResponse>>, CategoryCreateCommandHandler>();
         }
     }
 }

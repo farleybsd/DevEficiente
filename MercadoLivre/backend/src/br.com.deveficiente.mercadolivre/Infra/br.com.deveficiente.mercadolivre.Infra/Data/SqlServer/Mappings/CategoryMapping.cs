@@ -4,7 +4,7 @@
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.ToTable("Categoria");
+            builder.ToTable("Category");
 
             builder.HasKey(c => c.Id);
 
@@ -14,6 +14,8 @@
 
             builder.HasIndex(c => c.Name)
               .IsUnique();
+
+            builder.Ignore(c => c.IdCategory);
         }
     }
 }

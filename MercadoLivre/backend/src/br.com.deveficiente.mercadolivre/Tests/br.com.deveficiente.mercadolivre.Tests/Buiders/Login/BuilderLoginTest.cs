@@ -6,7 +6,7 @@
         public void momentOfRegistrationLoginAndPassword()
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = "farley.t.i@hotmail.com";
@@ -26,7 +26,7 @@
         public void loginCannotbeblank()
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = string.Empty;
@@ -46,7 +46,7 @@
         public void loginCannotbeNull(string email)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var passwordValue = "MinhaSenha123";
@@ -62,7 +62,7 @@
         public void loginCannotbeDoubleQuotes()
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var passwordValue = "MinhaSenha123";
@@ -98,7 +98,7 @@
         public void loginMustBeInTheInValidEmailFormat(string email)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var passwordValue = "MinhaSenha123";
@@ -123,7 +123,7 @@
         public void loginMustBeInTheValidEmailFormat(string email)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var passwordValue = "MinhaSenha123";
@@ -145,7 +145,7 @@
         public void ThePasswordCannotBeBlankOrNull(string passwordValue)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = "farley.t.i@hotmail.com";
@@ -166,7 +166,7 @@
         public void ThePasswordMustBeAtLeastSixCharactersLong(string passwordValue)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = "farley.t.i@hotmail.com";
@@ -183,7 +183,7 @@
         public void PasswordWithMoreThanSixDigits(string passwordValue)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = "farley.t.i@hotmail.com";
@@ -203,7 +203,7 @@
         public void ThePasswordMustBeStoredUsingSomeHashingAlgorithmYourChoice(string passwordValue)
         {
             // Arrange
-            var builderLogin = new BuilderLogin();
+            var builderLogin = new BuilderCategory();
             var handlerLogin = new HandlerLogin(builderLogin);
 
             var email = "farley.t.i@hotmail.com";
