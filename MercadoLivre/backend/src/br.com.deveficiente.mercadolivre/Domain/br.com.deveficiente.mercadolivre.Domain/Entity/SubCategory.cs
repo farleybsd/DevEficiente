@@ -5,6 +5,7 @@
         public int CategoryId { get; private set; }
         public int Id { get; private set; }
         public string Name { get; set; }
+        public  Category Category { get; private set; } = new Category();
 
         public SubCategory()
         {

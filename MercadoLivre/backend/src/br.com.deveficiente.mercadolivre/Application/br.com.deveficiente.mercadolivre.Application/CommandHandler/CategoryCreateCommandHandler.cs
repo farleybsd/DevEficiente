@@ -18,7 +18,7 @@ namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
         public async Task<Result<CategoryCreateResponse>> Handle(CategoryCreateCommand request, CancellationToken cancellationToken)
         {
             Uow.BeginTransaction();
-            var categoryMotherName = await Uow.CategoryRepository.GetByIdAsync(request.IdCategory);
+            var categoryMotherName = await Uow.CategoryRepository.GetCategoriesWithSubCategoriesAsync(request.IdCategory);
             var subcategory = request.CommandToEntity(request);
             Uow.SubCategoryRepository.Add(subcategory);
             Uow.Commit();
@@ -30,7 +30,7 @@ namespace br.com.deveficiente.mercadolivre.Application.CommandHandler
                 {
                     IdCategorymother = request.IdCategory,
                     CategoryName = request.CategoryName,
-                    CategoryMother = categoryMotherName.Name,
+                    CategoryMother = categoryMotherName.First().Name,
                 }
             };
         }

@@ -9,7 +9,7 @@
 
         public virtual ICollection<SubCategory> subCategory { get; private set; }
 
-        public Category() { }
+        public Category() { subCategory = new HashSet<SubCategory>(); }
 
         public void setName(string name)
         {

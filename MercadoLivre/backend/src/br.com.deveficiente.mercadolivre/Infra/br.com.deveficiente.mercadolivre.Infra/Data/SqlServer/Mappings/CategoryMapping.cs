@@ -16,6 +16,10 @@
               .IsUnique();
 
             builder.Ignore(c => c.IdCategory);
+
+            builder.HasMany(c => c.subCategory)
+               .WithOne(sc => sc.Category)
+               .HasForeignKey(sc => sc.CategoryId);
         }
     }
 }

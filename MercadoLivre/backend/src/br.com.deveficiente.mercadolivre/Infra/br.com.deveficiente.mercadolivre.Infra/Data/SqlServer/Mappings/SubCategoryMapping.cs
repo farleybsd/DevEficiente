@@ -12,10 +12,15 @@
                   .IsRequired()
                   .HasMaxLength(255);
 
-            builder.HasOne<Category>()
-            .WithMany(c => c.subCategory)
-            .HasForeignKey(sc => sc.CategoryId)
-            .OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(sc => sc.Category)
+               .WithMany(c => c.subCategory)
+               .HasForeignKey(sc => sc.CategoryId)
+               .OnDelete(DeleteBehavior.Cascade)
+               .HasConstraintName("FK_CategoryId_Category");
+
+            builder.Ignore(c => c.Category);
+
+
         }
     }
 }
